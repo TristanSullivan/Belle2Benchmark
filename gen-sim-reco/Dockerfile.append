@@ -1,0 +1,5 @@
+# Add here any workload-specific Dockerfile instructions.
+# They will be appended to the Dockerfile generated from a common template.
+
+RUN yum install -y git && yum clean all
+

@@ -1,0 +1,2534 @@
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+[run_build.sh] starting at Mon Aug 31 12:07:21 PDT 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Current directory is /root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco
+
+
+CI_JOB_ID=20200831-120721-816257833
+CI_JOB_NAME=noCI
+CI_PROJECT_DIR=/root/hep-workloads
+CI_REGISTRY_IMAGE=gitlab-registry.cern.ch/hep-benchmarks/hep-workloads
+CIENV_HEPWL_SPECFILE=/root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco.spec
+CIENV_BUILDEVENT=
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+[gitlab-ci.sh] build starting at Mon Aug 31 12:07:21 PDT 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Current directory is /root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco
+
+From nproc: there are 4 processing units available
+From taskset: pid 26745's current affinity list: 0-3
+From /proc/self/status: Cpus_allowed_list:	0-3
+
+CI_JOB_ID=20200831-120721-816257833
+CI_JOB_NAME=noCI
+CI_PROJECT_DIR=/root/hep-workloads
+CI_REGISTRY_IMAGE=gitlab-registry.cern.ch/hep-benchmarks/hep-workloads
+CIENV_HEPWL_SPECFILE=/root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco.spec
+
+Build image from spec file /root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco.spec
+
+CIENV_BUILDEVENT=all
+CIENV_MOUNTCVMFS=1
+CIENV_JOBDIR=/tmp/root/logs/noCI-20200831-120721-816257833
+CIENV_CVMFSVOLUME=/tmp/root/cvmfs_hep/noCI-20200831-120721-816257833
+CIENV_DOCKERREGISTRY=
+CIENV_SINGULARITYCACHE=/tmp/root/singularity/cache
+running privileged docker with fixed entrypoint
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+[main.sh] starting at Mon Aug 31 21:07:23 CEST 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Current directory is /
+
+CIENV_JOBDIR is /tmp/root/logs/noCI-20200831-120721-816257833
+CI_PROJECT_DIR is /root/hep-workloads
+scriptDir is /root/hep-workloads/build-executor
+[generate_Dockerfile.sh] Loading functions from generate_Dockerfile.sh
+CIENV_HEPWL_SPECFILE=/root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco.spec
+CIENV_BUILDEVENT=all
+CIENV_MOUNTCVMFS=1
+CIENV_JOBDIR=/tmp/root/logs/noCI-20200831-120721-816257833
+MAIN_NETWORKCONN=0
+CIENV_DOCKERREGISTRY=
+
+[main] Input parameters
+-------------
+CIENV_HEPWL_SPECFILE /root/hep-workloads/belle2/gen-sim-reco/belle2-gen-sim-reco.spec
+CIENV_BUILDEVENT all
+CIENV_DOCKERREGISTRY
+CIENV_MOUNTCVMFS 1
+CIENV_JOBDIR /tmp/root/logs/noCI-20200831-120721-816257833
+CIENV_CVMFSVOLUME /tmp/root/cvmfs_hep/noCI-20200831-120721-816257833
+-------------
+CI_JOB_ID=20200831-120721-816257833
+CI_JOB_NAME=noCI
+CI_PROJECT_DIR=/root/hep-workloads
+CI_REGISTRY_IMAGE=gitlab-registry.cern.ch/hep-benchmarks/hep-workloads
+----------- /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+HEPWL_BMKEXE=belle2-gen-sim-reco-bmk.sh
+#HEPWL_BMKOPTS="-e 4 -c 5" # -c replaces -n as of v0.7
+HEPWL_BMKOPTS="-e 20 -c 2" # -c replaces -n as of v0.7
+HEPWL_BMKDIR=belle2-gen-sim-reco
+HEPWL_BMKDESCRIPTION="belle2-gen-sim-reco-bmk"
+HEPWL_DOCKERIMAGENAME=belle2-gen-sim-reco-bmk
+HEPWL_DOCKERIMAGETAG=v0.15 # versions >= v0.6 use common bmk driver, >= v0.9 use separate GEN/SIM scores
+HEPWL_CVMFSREPOS=belle.cern.ch
+-----------
+[load_and_validate_specfile] HEPWL SPEC FILE: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate spec file name
+[load_and_validate_specfile] experiment: belle2-gen-sim
+[load_and_validate_specfile] workload: gen-sim-reco
+[load_and_validate_specfile] source /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate HEPWL_ environment variables
+[load_and_validate_specfile] OK
+[mount_cvmfs] ................................................
+[mount_cvmfs] starting at Mon Aug 31 21:07:30 CEST 2020
+[mount_cvmfs] current directory is /
+[mount_cvmfs] mounting cvmfs repositories belle.cern.ch
+NB: it's fine if there is a single error message such as 'Failed to get D-Bus connection: Operation not permitted'
+CernVM-FS: running with credentials 998:995
+CernVM-FS: loading Fuse module... done
+CernVM-FS: mounted cvmfs on /cvmfs/belle.cern.ch
+[mount_cvmfs] ls -l /cvmfs/belle.cern.ch
+total 7
+drwxr-xr-x 259 cvmfs cvmfs  29 Aug 31 01:03 conditions
+drwxrwxr-x   4 cvmfs cvmfs  22 Oct  2  2018 el7
+drwxr-xr-x   4 cvmfs cvmfs  22 Aug 13 14:21 el8
+drwxr-xr-x   5 cvmfs cvmfs 232 Jul 30 08:34 grid
+drwxr-xr-x   8 cvmfs cvmfs 181 Aug 13 16:36 kernels
+drwxr-xr-x   6 cvmfs cvmfs 106 Aug  3 10:07 rucio
+drwxrwxr-x   6 cvmfs cvmfs   3 Sep 28  2016 sl5
+drwxrwxr-x   5 cvmfs cvmfs  22 Oct  2  2018 sl6
+lrwxrwxrwx   1 cvmfs cvmfs   3 Feb 11  2017 sl7 -> el7
+drwxr-xr-x   7 cvmfs cvmfs  49 Jul 30 15:23 tools
+drwxrwxr-x   4 cvmfs cvmfs  23 Oct  2  2018 ubuntu1604
+drwxrwxr-x   4 cvmfs cvmfs  22 Oct  2  2018 ubuntu1804
+drwxr-xr-x   4 cvmfs cvmfs  22 Aug 13 14:21 ubuntu2004
+drwxr-xr-x   4 cvmfs cvmfs  18 Aug 13 16:36 versioning
+[mount_cvmfs] finished at Mon Aug 31 21:08:11 CEST 2020
+[execute_procedure] ................................................
+[execute_procedure] starting at Mon Aug 31 21:08:11 CEST 2020
+[execute_procedure] current directory is /
+[execute_procedure] option 'all'
+Run the full sequence.
+[check_tag_version] ................................................
+[check_tag_version] starting at Mon Aug 31 21:08:11 CEST 2020
+[check_tag_version] current directory is /
+[check_tag_version] testing image /belle2-gen-sim-reco-bmk:latest
+
+[check_tag_version] signature 
+[check_tag_version] tags
+[check_tag_version] tag 'latest' is currently not associated to any tag
+[check_tag_version] finished at Mon Aug 31 21:08:11 CEST 2020
+[run_docker_wl] ................................................
+[run_docker_wl] starting at Mon Aug 31 21:08:11 CEST 2020
+[run_docker_wl] current directory is /
+[run_docker_wl] HEPWL_BMKOPTS options: -e 20 -c 2
+[run_docker_wl] Building temporary docker image belle2-gen-sim-reco-bmk:cvmfs-shrink
+[build_docker_image] ................................................
+[build_docker_image] starting at Mon Aug 31 21:08:11 CEST 2020
+[build_docker_image] current directory is /
+[build_docker_image]  belle2-gen-sim-reco-bmk:cvmfs-shrink
+[generate_Dockerfile] Input hepwlSpecFile: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[generate_Dockerfile] Input dockerCommonHeader: ./common/Dockerfile.header
+[generate_Dockerfile] Input dockerCommonTemplate: ./common/Dockerfile.template
+[load_and_validate_specfile] HEPWL SPEC FILE: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate spec file name
+[load_and_validate_specfile] experiment: belle2-gen-sim
+[load_and_validate_specfile] workload: gen-sim-reco
+[load_and_validate_specfile] source /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate HEPWL_ environment variables
+[load_and_validate_specfile] OK
+[generate_Dockerfile] Successfully generated: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/Dockerfile
+# ********** DOCKERFILE HEADER start **********
+# ******* PLEASE DO NOT EDIT THIS FILE! *******
+# This is the common header for all HEP workloads (BMK-124 and BMK-159).
+# Please add workload-specific instructions in Dockerfile.append.
+
+FROM gitlab-registry.cern.ch/linuxsupport/slc6-base:latest
+
+# Append 'yum clean all' to work around https://github.com/CentOS/sig-cloud-instance-images/issues/15
+# But use '&& yum clean all' instead of '; yum clean all' to stop the build in case of errors!
+
+RUN yum install -y which man file util-linux gcc wget tar freetype perl jq && yum clean all
+
+# Prepare a data directory for downloading large files that should normally be cacheable (BMK-159)
+# Its contents should be retrieved in Dockerfile.append, before /bmk/<bmkdir> is copied over
+# Each file it contains is then individually symlinked to /bmk/<bmkdir>/data/<file> in Dockerfile.template
+RUN mkdir -p /bmk/data
+
+# ********** DOCKERFILE HEADER  end  **********
+
+# Add here any workload-specific Dockerfile instructions.
+# They will be appended to the Dockerfile generated from a common template.
+
+RUN yum install -y git && yum clean all
+
+# ********* DOCKERFILE TEMPLATE start *********
+# ******* PLEASE DO NOT EDIT THIS FILE! *******
+# This is the common template for all HEP workloads (BMK-124 and BMK-159).
+# Please add workload-specific instructions in Dockerfile.append.
+
+# Optionally allow disabling the cache only from this point onwards if using
+#   docker build -t your-image --build-arg CACHEBUST=$(date +%s) .
+# See https://github.com/moby/moby/issues/1996#issuecomment-185872769
+
+###ARG CACHEBUST=1
+
+###RUN echo CACHEBUST=$CACHEBUST
+
+# This should normally contain always the same files and be cacheable (BMK-159)
+COPY ./cvmfs /cvmfs
+
+RUN tar -cf /tmp/cvmfs_checksum.tar /cvmfs && md5sum /tmp/cvmfs_checksum.tar | cut -f1 -d" " > /tmp/cvmfs_checksum && rm /tmp/cvmfs_checksum.tar
+
+# This should normally contain always the same files and be cacheable (BMK-159)
+RUN tar -cf /tmp/bmkdata_checksum.tar /bmk/data && md5sum /tmp/bmkdata_checksum.tar | cut -f1 -d" " > /tmp/bmkdata_checksum && rm /tmp/bmkdata_checksum.tar
+
+# This may also be cacheable in most cases except when /bmk contents change
+COPY ./belle2-gen-sim-reco /bmk/./belle2-gen-sim-reco
+
+COPY common/bmk-driver.sh /bmk/./belle2-gen-sim-reco/bmk-driver.sh 
+
+RUN if [ ! -d /bmk/./belle2-gen-sim-reco/data ]; then mkdir /bmk/./belle2-gen-sim-reco/data; fi
+
+RUN for file in $(cd /bmk/data; ls); do ln -sf /bmk/data/$file /bmk/./belle2-gen-sim-reco/data/$file; done
+
+RUN tar -cf /tmp/bmk_checksum.tar /bmk && md5sum /tmp/bmk_checksum.tar | cut -f1 -d" " > /tmp/bmk_checksum && rm /tmp/bmk_checksum.tar
+
+RUN cvmfs_checksum=`cat /tmp/cvmfs_checksum` && bmkdata_checksum=`cat /tmp/bmkdata_checksum` && bmk_checksum=`cat /tmp/bmk_checksum` && rm /tmp/cvmfs_checksum /tmp/bmkdata_checksum /tmp/bmk_checksum && echo '{"version":"v0.15","description":"belle2-gen-sim-reco-bmk","cvmfs_checksum":"'$cvmfs_checksum'","bmkdata_checksum":"'$bmkdata_checksum'","bmk_checksum":"'$bmk_checksum'"}' > /bmk/./belle2-gen-sim-reco/version.json
+
+LABEL multi.maintainer="Domenico Giordano <domenico.giordano@cern.ch>" \
+      multi.version="0.1" \
+      multi.description="belle2-gen-sim-reco-bmk"
+
+ENTRYPOINT ["/bmk/./belle2-gen-sim-reco/belle2-gen-sim-reco-bmk.sh"]
+
+# This contains provenance data that can never be cached
+COPY ./cvmfs.provenance /cvmfs.provenance
+
+# Add user 'bmkuser' to run benchmarks as a non-root user (BMK-166 and BMK-167)
+RUN groupadd bmkuser
+
+RUN useradd -g bmkuser --create-home --shell /bin/bash bmkuser
+
+# ********* DOCKERFILE TEMPLATE  end  *********
+
+[build_docker_image] docker build of belle2-gen-sim-reco-bmk:cvmfs-shrink starting at Mon Aug 31 21:08:11 CEST 2020
+
+Sending build context to Docker daemon  2.582GB
+Step 1/18 : FROM gitlab-registry.cern.ch/linuxsupport/slc6-base:latest
+ ---> 6f5226de3508
+Step 2/18 : RUN yum install -y which man file util-linux gcc wget tar freetype perl jq && yum clean all
+ ---> Using cache
+ ---> 203e42c669bd
+Step 3/18 : RUN mkdir -p /bmk/data
+ ---> Using cache
+ ---> 157e45a00346
+Step 4/18 : RUN yum install -y git && yum clean all
+ ---> Using cache
+ ---> fb21757b4daa
+Step 5/18 : COPY ./cvmfs /cvmfs
+ ---> Using cache
+ ---> 84c5740e48b4
+Step 6/18 : RUN tar -cf /tmp/cvmfs_checksum.tar /cvmfs && md5sum /tmp/cvmfs_checksum.tar | cut -f1 -d" " > /tmp/cvmfs_checksum && rm /tmp/cvmfs_checksum.tar
+ ---> Using cache
+ ---> 7dc09641cca2
+Step 7/18 : RUN tar -cf /tmp/bmkdata_checksum.tar /bmk/data && md5sum /tmp/bmkdata_checksum.tar | cut -f1 -d" " > /tmp/bmkdata_checksum && rm /tmp/bmkdata_checksum.tar
+ ---> Using cache
+ ---> 1b0170e94c42
+Step 8/18 : COPY ./belle2-gen-sim-reco /bmk/./belle2-gen-sim-reco
+ ---> 6d807d339531
+Step 9/18 : COPY common/bmk-driver.sh /bmk/./belle2-gen-sim-reco/bmk-driver.sh
+ ---> eba529a52f6a
+Step 10/18 : RUN if [ ! -d /bmk/./belle2-gen-sim-reco/data ]; then mkdir /bmk/./belle2-gen-sim-reco/data; fi
+ ---> Running in 628554f5ff1e
+Removing intermediate container 628554f5ff1e
+ ---> 86058a9c496e
+Step 11/18 : RUN for file in $(cd /bmk/data; ls); do ln -sf /bmk/data/$file /bmk/./belle2-gen-sim-reco/data/$file; done
+ ---> Running in 6dbf0edf8ee4
+Removing intermediate container 6dbf0edf8ee4
+ ---> b58afe5c85b0
+Step 12/18 : RUN tar -cf /tmp/bmk_checksum.tar /bmk && md5sum /tmp/bmk_checksum.tar | cut -f1 -d" " > /tmp/bmk_checksum && rm /tmp/bmk_checksum.tar
+ ---> Running in e87fffce5bf2
+[91mtar: Removing leading `/' from member names
+[0mRemoving intermediate container e87fffce5bf2
+ ---> 67e45ba77bdf
+Step 13/18 : RUN cvmfs_checksum=`cat /tmp/cvmfs_checksum` && bmkdata_checksum=`cat /tmp/bmkdata_checksum` && bmk_checksum=`cat /tmp/bmk_checksum` && rm /tmp/cvmfs_checksum /tmp/bmkdata_checksum /tmp/bmk_checksum && echo '{"version":"v0.15","description":"belle2-gen-sim-reco-bmk","cvmfs_checksum":"'$cvmfs_checksum'","bmkdata_checksum":"'$bmkdata_checksum'","bmk_checksum":"'$bmk_checksum'"}' > /bmk/./belle2-gen-sim-reco/version.json
+ ---> Running in 029af519028e
+Removing intermediate container 029af519028e
+ ---> 3064f40cba3a
+Step 14/18 : LABEL multi.maintainer="Domenico Giordano <domenico.giordano@cern.ch>"       multi.version="0.1"       multi.description="belle2-gen-sim-reco-bmk"
+ ---> Running in 6495d853f2d7
+Removing intermediate container 6495d853f2d7
+ ---> 0e83f9e56f36
+Step 15/18 : ENTRYPOINT ["/bmk/./belle2-gen-sim-reco/belle2-gen-sim-reco-bmk.sh"]
+ ---> Running in 594da929bba3
+Removing intermediate container 594da929bba3
+ ---> 80bcf28f7bcb
+Step 16/18 : COPY ./cvmfs.provenance /cvmfs.provenance
+ ---> e34ee9fcac76
+Step 17/18 : RUN groupadd bmkuser
+ ---> Running in dfc4a856b4f1
+Removing intermediate container dfc4a856b4f1
+ ---> e74f2c4cc1e1
+Step 18/18 : RUN useradd -g bmkuser --create-home --shell /bin/bash bmkuser
+ ---> Running in 7345b8621f64
+Removing intermediate container 7345b8621f64
+ ---> 87cf6a0ca2ee
+Successfully built 87cf6a0ca2ee
+Successfully tagged belle2-gen-sim-reco-bmk:cvmfs-shrink
+[build_docker_image] finished at Mon Aug 31 21:08:54 CEST 2020
+
+[run_docker_wl] Run WL in docker (to extract cvmfs) via execute_command - started
+Mon Aug 31 21:08:54 CEST 2020 [execute_command] Executing 'docker run --rm -v /tmp/root/logs/noCI-20200831-120721-816257833/results:/results -v /tmp/root/logs/noCI-20200831-120721-816257833/build-wl:/tmp/root/logs/noCI-20200831-120721-816257833/build-wl -w /tmp/root/logs/noCI-20200831-120721-816257833/build-wl -v /tmp/root/cvmfs_hep/noCI-20200831-120721-816257833:/cvmfs:shared belle2-gen-sim-reco-bmk:cvmfs-shrink -e 20 -c 2 -d'
+
+[bmk-driver.sh] Parse input arguments '-e 20 -c 2 -d'
+
+
+========================================================================
+[bmk-driver.sh] Mon Aug 31 21:08:55 CEST 2020 entering common benchmark driver
+========================================================================
+
+[bmk-driver.sh] entering from belle2-gen-sim-reco-bmk.sh
+
+[bmk-driver.sh] benchmark directory BMKDIR=/bmk/belle2-gen-sim-reco:
+
+/bmk/belle2-gen-sim-reco:
+total 44
+-rw-r--r-- 1 root root   216 Aug 31 21:08 version.json
+drwxr-xr-x 2 root root     6 Aug 31 21:08 data
+-rw-r--r-- 1 root root  2671 Aug 31 21:07 output
+-rwxr-xr-x 1 root root  5555 Aug 31 21:07 belle2-gen-sim-reco-bmk.sh
+drwxr-xr-x 3 root root   121 Aug 21 02:39 bmk-04-01-05
+-rwxr-xr-x 1 root root   427 Aug 21 01:51 parsetwo.py
+-rwxr-xr-x 1 root root   353 Aug 21 01:51 parse.py
+-rw-r--r-- 1 root root 17068 Aug 21 01:50 bmk-driver.sh
+
+/bmk/belle2-gen-sim-reco/data:
+total 0
+
+/bmk/belle2-gen-sim-reco/bmk-04-01-05:
+total 8
+-rw-r--r-- 1 root root 1613 Aug 21 02:39 bmk.py
+-rw-r--r-- 1 root root  357 Aug 21 02:27 SConscript
+lrwxrwxrwx 1 root root   21 Aug 21 02:27 SConstruct -> site_scons/SConstruct
+lrwxrwxrwx 1 root root   61 Aug 21 02:27 site_scons -> /cvmfs/belle.cern.ch/el7/releases/release-04-01-05/site_scons
+
+[bmk-driver.sh] data directory /bmk/belle2-gen-sim-reco/../data:
+
+/bmk/belle2-gen-sim-reco/../data:
+total 0
+
+Default (from belle2-gen-sim-reco-bmk.sh): NCOPIES=4
+Default (from belle2-gen-sim-reco-bmk.sh): NTHREADS=2
+Default (from belle2-gen-sim-reco-bmk.sh): NEVENTS_THREAD=1
+
+Default (from bmk-driver.sh): USER_NCOPIES=2
+Default (from bmk-driver.sh): USER_NTHREADS=
+Default (from bmk-driver.sh): USER_NEVENTS_THREAD=20
+
+Default (from bmk-driver.sh): resultsDir=/results
+Default (from bmk-driver.sh): skipSubDir=0
+Default (from bmk-driver.sh): DEBUG=1
+
+Current value: USER_NCOPIES=2
+Current value: USER_NTHREADS=
+Current value: USER_NEVENTS_THREAD=20
+
+Current value: resultsDir=/results
+Current value: skipSubDir=0
+Current value: DEBUG=1
+
+[bmk-driver.sh] function 'validateInputArguments' starting
+
+[validateInputArguments] validate input arguments
+
+[bmk-driver.sh] function 'validateInputArguments' completed (status=0)
+
+[bmk-driver.sh] base working directory : /results/belle2-gen-sim-reco-c2-e20-1598900935_1683
+
+Current value: NCOPIES=2
+Current value: NTHREADS=2
+Current value: NEVENTS_THREAD=20
+
+[bmk-driver.sh] APP=belle2-gen-sim-reco
+
+------------------------------------------------------------------------
+[bmk-driver.sh] spawn 2 processes
+------------------------------------------------------------------------
+
+[bmk-driver.sh] spawned process 1 with pid 35
+
+[doOneWrapper (1)] Mon Aug 31 21:08:55 CEST 2020 : process 1 started
+[doOneWrapper (1)] workdir is /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1
+[doOneWrapper (1)] logfile is /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1/doOneWrapper_1.log
+[doOneWrapper (1)] Mon Aug 31 21:08:55 CEST 2020 : process 1 configured
+[doOneWrapper (1)] HOME=/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1/HOME
+[doOneWrapper (1)] current process pid is 35
+[doOneWrapper (1)] inside docker - run doOne as bmkuser
+
+[doOne (1)] Mon Aug 31 21:08:55 CEST 2020 starting in /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1
+[doOne (1)] do one! (process 1 of 2)
+[bmk-driver.sh] spawned process 2 with pid 74
+
+[doOneWrapper (2)] Mon Aug 31 21:08:55 CEST 2020 : process 2 started
+[doOneWrapper (2)] workdir is /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2
+[doOneWrapper (2)] logfile is /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2/doOneWrapper_2.log
+[doOneWrapper (2)] Mon Aug 31 21:08:55 CEST 2020 : process 2 configured
+[doOneWrapper (2)] HOME=/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2/HOME
+[doOneWrapper (2)] current process pid is 74
+[doOneWrapper (2)] inside docker - run doOne as bmkuser
+
+[doOne (2)] Mon Aug 31 21:08:55 CEST 2020 starting in /results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2
+[doOne (2)] do one! (process 2 of 2)
+
+[bmk-driver.sh] Mon Aug 31 21:08:56 CEST 2020 ... waiting for spawned processes with pid's 35 74
+
+Belle II software tools set up at: /cvmfs/belle.cern.ch/tools
+Belle II software tools set up at: /cvmfs/belle.cern.ch/tools
+Environment setup for release: release-04-01-05
+Central release directory    : /cvmfs/belle.cern.ch/sl6/releases/release-04-01-05
+Environment setup for release: release-04-01-05
+Central release directory    : /cvmfs/belle.cern.ch/sl6/releases/release-04-01-05
+Executing the following number of threads:
+2
+Executing the following number of threads:
+2
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::ActiveSector<Belle2::StaticSector<Belle2::SpacePoint,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTimeUside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DistanceInTimeVside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance2DXYSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance1DZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::SlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DNormed<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTime<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Angle3DSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CosAngleXY<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::AngleRZSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleDist2IP<Belle2::SpacePoint>,Belle2::ClosedUpperBoundedSet<double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeZoverS<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSoverZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::HelixParameterFit<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Pt<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleRadius<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,int>,Belle2::TrackNode>,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_ActiveSectorNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::TrackNode,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_HitNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::Segment<Belle2::TrackNode>,Belle2::CACell> has no streamer or dictionary, data member "m_SegmentNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::ActiveSector<Belle2::StaticSector<Belle2::SpacePoint,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTimeUside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DistanceInTimeVside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance2DXYSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance1DZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::SlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DNormed<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTime<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Angle3DSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CosAngleXY<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::AngleRZSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleDist2IP<Belle2::SpacePoint>,Belle2::ClosedUpperBoundedSet<double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeZoverS<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSoverZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::HelixParameterFit<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Pt<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleRadius<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,int>,Belle2::TrackNode>,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_ActiveSectorNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::TrackNode,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_HitNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::Segment<Belle2::TrackNode>,Belle2::CACell> has no streamer or dictionary, data member "m_SegmentNetwork" will not be saved
+_________________________________________________OUTPUT START_________________________________________________
+[INFO] Steering file: bmk.py
+[INFO] The random number seed is set to "12345"
+
+*************************************************************
+ Geant4 version Name: geant4-10-01-patch-02    (19-June-2015)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+[INFO] Starting event processing, random seed is set to '12345'
+[INFO] Input Path [EventInfoSetter -> EvtGenInput]
+[INFO] Main Path [Gearbox -> ... (145 further modules) ... -> SoftwareTrigger ]
+[INFO] Output Path []
+[INFO] Conditions Database: found working server
+	url = http://belle2db.sdcc.bnl.gov/b2s/rest/
+[INFO] Conditions data: configured globaltags (highest priority first) are mc_production_MC13a_rev1, release-04-00-03
+[INFO] SVDClusterCuts: from now on we are using ClusterCalibrations_default_2018-11-22T17:15:14.509000_INFO:_seed=5_adj=3_cls=0_scaleFactors=fromSimulation
+ ... message repeated 3 times
+[INFO] SVDPulseShapeCalibrations: from now on we are using PulseShapeCalibrations_default_2018-11-22T17:15:16.043000_INFO:_peakTime=75_pulseWidth=130_gain=fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDCoGTimeCalibrations: from now on we are using SVDCoGTimeCalibrations_MC_2019-07-30T20:18:02.275349_INFO:_3rdOrderPol_TBindep_lat=+47.16
+ ... message repeated 1 times
+[INFO] SVDNoiseCalibrations: from now on we are using NoiseCalibrations_default_2018-11-22T17:15:15.605000_INFO:_fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDFADCMaskedStrips: from now on we are using FADCMaskedStrips_default_2019-07-02T16:42:18.880884_INFO:_noFADCMaskedstrips
+[INFO] SVDHitTimeSelectionFunction: from now on we are using HitTimeSelection_default_2019-07-17T22:48:45.508791_INFO:_noCut_on_tmin
+ ... message repeated 3 times
+[INFO] Perform Geant4 final initialization: Geometry optimization, PhysicsList calculations...
+[INFO] done, Geant4 ready
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+[INFO] FiltersContainer: Replacing existing filter for setup name: SVDOnlyDefault
+[INFO] ExtManager::Initialize(): Ext will run with FullSim and has initialized the extrapolator
+[INFO] Ext hypothesis for PDG code 11 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 211 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 321 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 2212 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 1000010020 and its antiparticle will be extrapolated
+[INFO] TOPGeometryPar: PMT types mapped to positions, size = 512
+[INFO] TOPconfigure: new map of PMT types has been passed to reconstruction
+[INFO] TOPconfigure: Alignment constants are set in reconstruction
+[INFO] TOPBunchFinder: running in data processing mode
+[INFO] ExtManager::Initialize(): Muid will run with FullSim; the extrapolator has already been initialized
+[INFO] Muid hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: pi+:skim (pi-:skim)
+[INFO]    -> MDST source: Tracks
+[INFO]    -> With cuts  : pt>0.2 and abs(d0) < 2 and abs(z0) < 4
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: gamma:skim (gamma:skim)
+[INFO]    -> MDST source: ECLClusters
+[INFO]    -> With cuts  : E>0.1
+[INFO] ProcHandler: input process forked. pid = 308
+[INFO] ProcHandler: worker process forked. pid = 309
+[INFO] ProcHandler: worker process forked. pid = 312
+[INFO] (10000) input process finished.
+
+  KORB: rho/rhop -> pi-pi0 mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhop  =   1.37000000      0.509999990     -0.109999999    
+  KORB: K*/K*prime -> Kpi mixing:
+  KORB: kstp  =   1.70000005      0.234999999      -3.79999988E-02
+  KORB: a1/a1prime -> 3pi, KKpi mixing:
+  KORB: a1    =   1.27499998      0.699999988    
+  KORB: a1prim=   1.46099997      0.250000000       0.00000000    
+  KORB: K1A/K1B -> Kpipi mixing:
+  KORB: K1A   =   1.26999998       9.00000036E-02   1.00000000    
+  KORB: K1B   =   1.40199995      0.173999995      0.800000012    
+  KORB: rho/rhop/rhopp -> 4pi mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhopp =   1.46500003      0.310000002     -0.109999999    
+  KORB: rhoppp=   1.70000005      0.234999999     -0.109999999    
+  KORB: 3PI-PI0 PARAMS:   0.00000000      0.124200001      0.160400003      0.271100014      0.444299996    
+  KORB: PI-3PI0 PARAMS:   0.00000000       1.00000000    
+  In F3pi: add (rho-pi S-wave) + (rhop-pi S-wave) +
+               (rho-pi D-wave) + (rhop-pi D-wave) +
+    (f2 pi D-wave) + (sigmapi S-wave) + (f0pi S-wave)
+[WARNING] (0) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (0) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (0) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[WARNING] (1) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (1) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (1) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[INFO] (0) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (0) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (0) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (0) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (0) TOPreco: timebase-uncalibrated channels have been masked off
+[INFO] (1) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (1) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (1) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (1) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (1) TOPreco: timebase-uncalibrated channels have been masked off
+[ERROR] (0) In G4MagInt_Driver::AccurateAdvance(), GeomField1001: Proposed step is zero; hstep = 0 !  { module: Ext }
+[WARNING] (0) 146 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (0) The MCTrackFinder created a total of 264 track candidates
+[WARNING] (0) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (0) TOPBunchFinder: event T0 determined for 21/21 events
+[INFO] (0) worker process finished.
+
+[WARNING] (1) 159 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (1) The MCTrackFinder created a total of 270 track candidates
+[WARNING] (1) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (1) TOPBunchFinder: event T0 determined for 19/19 events
+[INFO] (1) worker process finished.
+
+[INFO] (20000) output process finished.
+[INFO] (20000) All processes completed
+[INFO] (20000) Global process: completed
+=======================================================================================================
+Name                                        |      Calls | Memory(MB) |    Time(s) |     Time(ms)/Call
+=======================================================================================================
+EventInfoSetter                             |         40 |          0 |       0.00 |    0.04 +-   0.02
+EvtGenInput                                 |         40 |         89 |      10.94 |  273.39 +-1443.19
+Tx                                          |         39 |         80 |      17.45 |  447.34 +-2728.52
+Rx                                          |         40 |          9 |       0.48 |   12.05 +-   5.17
+Gearbox                                     |         40 |          0 |       0.00 |    0.02 +-   0.00
+Geometry                                    |         40 |          0 |       0.00 |    0.02 +-   0.00
+FullSim                                     |         40 |         36 |     145.19 | 3629.78 +-1589.31
+SVDEventInfoSetter                          |         40 |          0 |       0.00 |    0.04 +-   0.01
+SVDDigitizer                                |         40 |          0 |       0.66 |   16.59 +-   5.74
+CDCDigitizer                                |         40 |          3 |       1.71 |   42.76 +-  22.10
+ActivatePXDPixelMasker                      |         40 |          0 |       0.00 |    0.02 +-   0.01
+ActivatePXDGainCalibrator                   |         40 |          0 |       0.00 |    0.02 +-   0.01
+PXDDigitizer                                |         40 |          0 |       0.04 |    1.06 +-   0.57
+TOPDigitizer                                |         40 |          2 |       0.87 |   21.87 +-  12.98
+ARICHDigitizer                              |         40 |          0 |       0.01 |    0.22 +-   0.20
+ECLDigitizer                                |         40 |          2 |       0.20 |    5.11 +-   1.63
+KLMDigitizer                                |         40 |          0 |       0.06 |    1.59 +-   0.87
+__ROISVDCoGTimeEstimator                    |         40 |          0 |       0.04 |    1.12 +-   0.37
+__ROISVDSimpleClusterizer                   |         40 |          1 |       0.07 |    1.67 +-   0.50
+__ROISVDMissingAPVsClusterCreator           |         40 |          0 |       0.00 |    0.02 +-   0.00
+__ROISVDSpacePointCreator                   |         40 |          2 |       0.03 |    0.86 +-   0.28
+SetupGenfitExtrapolationForPXDDataReduction |         40 |          0 |       0.00 |    0.02 +-   0.00
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.00
+SegmentNetworkProducer                      |         40 |          0 |       0.07 |    1.78 +-   1.68
+TrackFinderVXDCellOMat                      |         40 |          1 |       0.06 |    1.44 +-   1.67
+AddVXDTrackCandidateSubSets                 |         40 |          1 |       0.02 |    0.40 +-   0.23
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.02 |    0.60 +-   0.37
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.00
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.04 +-   0.02
+SVDOverlapResolver                          |         40 |          1 |       0.26 |    6.62 +-   5.62
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.01 |    0.34 +-   0.23
+SPTC2RTConverter                            |         40 |          1 |       0.05 |    1.16 +-   0.35
+SVD-only DAFRecoFitter                      |         40 |          4 |       2.05 |   51.27 +-  21.45
+PXDROIFinder                                |         40 |          0 |       0.30 |    7.44 +-   2.82
+PXDdigiFilter                               |         40 |          0 |       0.02 |    0.45 +-   0.13
+PruneDataStore                              |         40 |          0 |       0.19 |    4.76 +-   0.92
+Sum_Simulation                              |         40 |        234 |     180.83 | 4520.77 +-3760.16
+CDCTriggerTSF                               |         40 |          3 |       0.91 |   22.69 +-   5.60
+CDCTrigger2DFinder                          |         40 |          0 |       0.07 |    1.70 +-   0.72
+CDCTriggerETF                               |         40 |          1 |       0.01 |    0.20 +-   0.04
+CDCTrigger2DFitter                          |         40 |          0 |       0.01 |    0.22 +-   0.07
+CDCTrigger3DFitter                          |         40 |          0 |       0.01 |    0.28 +-   0.12
+CDCTriggerNeuro                             |         40 |          0 |       0.00 |    0.12 +-   0.06
+CDCTriggerTrackCombiner                     |         40 |          1 |       0.01 |    0.26 +-   0.10
+TRGECLFAM                                   |         40 |         38 |       0.64 |   16.01 +-   3.56
+TRGECL                                      |         40 |          1 |       0.02 |    0.56 +-   0.17
+KLMTrigger                                  |         40 |          0 |       0.02 |    0.39 +-   0.22
+TRGGRLMatch                                 |         40 |          1 |       0.01 |    0.23 +-   0.11
+TRGGRLProjects                              |         40 |          0 |       0.01 |    0.19 +-   0.03
+TRGGDL                                      |         40 |          0 |       0.00 |    0.05 +-   0.03
+Sum_TriggerSimulation                       |         40 |         44 |       1.72 |   42.91 +-   7.43
+EventsOfDoomBuster                          |         40 |          0 |       0.00 |    0.03 +-   0.01
+ECLWaveformFit                              |         40 |          0 |       0.34 |    8.49 +-   2.42
+ECLDigitCalibrator                          |         40 |          0 |       0.04 |    1.01 +-   0.35
+ECLEventT0                                  |         40 |          0 |       0.01 |    0.30 +-   0.13
+ECLCRFinder                                 |         40 |          1 |       0.14 |    3.38 +-   1.09
+ECLLocalMaximumFinder                       |         40 |          0 |       0.01 |    0.31 +-   0.11
+ECLSplitterN1                               |         40 |          0 |       0.09 |    2.27 +-   1.60
+ECLSplitterN2                               |         40 |          0 |       0.02 |    0.56 +-   0.16
+ECLShowerCorrector                          |         40 |          0 |       0.00 |    0.06 +-   0.02
+ECLShowerCalibrator                         |         40 |          0 |       0.00 |    0.02 +-   0.00
+ECLShowerShape                              |         40 |          0 |       0.08 |    2.00 +-   0.57
+ECLClusterPSD                               |         40 |          0 |       0.02 |    0.46 +-   0.13
+ECLCovarianceMatrix                         |         40 |          0 |       0.00 |    0.03 +-   0.01
+Sum_Clustering                              |         40 |          1 |       0.76 |   18.90 +-   5.32
+SVDCoGTimeEstimator                         |         40 |          0 |       0.04 |    0.91 +-   0.28
+SVDSimpleClusterizer                        |         40 |          0 |       0.06 |    1.38 +-   0.41
+SVDMissingAPVsClusterCreator                |         40 |          0 |       0.00 |    0.02 +-   0.00
+SVDSpacePointCreator                        |         40 |          0 |       0.03 |    0.73 +-   0.24
+PXDClusterizer                              |         40 |          0 |       0.01 |    0.25 +-   0.12
+TFCDC_WireHitPreparer                       |         40 |          0 |       0.12 |    2.96 +-   0.81
+TFCDC_ClusterPreparer                       |         40 |          0 |       0.19 |    4.64 +-   1.89
+TFCDC_SegmentFinderFacetAutomaton           |         40 |          5 |       2.19 |   54.75 +-  24.39
+TFCDC_AxialTrackFinderLegendre              |         40 |          4 |       1.31 |   32.63 +-  20.64
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.02 |    0.38 +-   0.12
+TFCDC_StereoHitFinder                       |         40 |          0 |       0.44 |   11.03 +-   6.98
+TFCDC_SegmentTrackCombiner                  |         40 |          0 |       0.20 |    5.09 +-   3.09
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.04 |    1.09 +-   0.35
+TFCDC_TrackExporter                         |         40 |          0 |       0.20 |    5.07 +-   1.64
+IPTrackTimeEstimator                        |         40 |          2 |       0.00 |    0.05 +-   0.03
+CDCHitBasedT0Extraction                     |         40 |         15 |       1.17 |   29.31 +- 122.22
+CDCTrackingEventLevelMdstInfoFiller         |         40 |          0 |       0.00 |    0.05 +-   0.02
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.01
+CDCToSVDSpacePointCKF_backward              |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_backward              |         40 |          6 |      11.76 |  293.88 +- 164.26
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_forward               |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_forward               |         40 |          0 |       0.21 |    5.13 +-   9.19
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.00
+SegmentNetworkProducer                      |         40 |          0 |       0.03 |    0.69 +-   0.54
+TrackFinderVXDCellOMat                      |         40 |          0 |       0.02 |    0.52 +-   1.95
+AddVXDTrackCandidateSubSets                 |         40 |          0 |       0.00 |    0.11 +-   0.11
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.01 |    0.14 +-   0.26
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.00
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.02 +-   0.01
+SVDOverlapResolver                          |         40 |          0 |       0.06 |    1.44 +-   4.33
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.01 |    0.13 +-   0.05
+SPTC2RTConverter                            |         40 |          0 |       0.01 |    0.33 +-   0.21
+DAFRecoFitter                               |         40 |          0 |       0.13 |    3.34 +-   7.25
+CDCToSVDSeedCKF_backward                    |         40 |          0 |       0.16 |    3.90 +-   8.17
+DAFRecoFitter                               |         40 |          0 |       0.13 |    3.13 +-   7.85
+CDCToSVDSeedCKF_forward                     |         40 |          0 |       0.15 |    3.75 +-   7.44
+RelatedTracksCombiner                       |         40 |          1 |       1.04 |   26.06 +-  16.81
+ToCDCCKF                                    |         40 |          1 |       1.51 |   37.82 +-  43.83
+CDCCKFTracksCombiner                        |         40 |          1 |       0.39 |    9.65 +-   3.24
+PruneRecoTracks                             |         40 |          0 |       0.02 |    0.40 +-   0.12
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.04 +-   0.01
+PXDSpacePointCreator                        |         40 |          0 |       0.00 |    0.12 +-   0.04
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_backward                           |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          9 |      13.21 |  330.30 +- 123.55
+ToPXDCKF_backward                           |         40 |          1 |       0.32 |    8.11 +-  27.41
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_forward                            |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          0 |       0.25 |    6.13 +-  27.27
+ToPXDCKF_forward                            |         40 |          0 |       0.24 |    5.97 +-  26.34
+RelatedTracksCombiner                       |         40 |          2 |       0.65 |   16.14 +-  25.10
+PruneRecoTracks                             |         40 |          0 |       0.11 |    2.85 +-   0.74
+PruneRecoTracks                             |         40 |          0 |       0.01 |    0.18 +-   0.06
+PruneRecoTracks                             |         40 |          0 |       0.12 |    2.98 +-   0.84
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.05 +-   0.01
+FullGridChi2TrackTimeExtractor              |         40 |          4 |      17.67 |  441.64 +- 127.59
+TrackFinderMCTruthRecoTracks                |         40 |          1 |       0.52 |   13.05 +-   5.42
+MCRecoTracksMatcher                         |         40 |          0 |       0.79 |   19.69 +-   8.84
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.07 +-   0.01
+Combined_DAFRecoFitter                      |         40 |          0 |      12.69 |  317.37 +-  97.01
+TrackCreator                                |         40 |         21 |      24.75 |  618.70 +- 188.77
+V0Finder                                    |         40 |         34 |      36.31 |  907.86 +- 511.01
+PruneRecoHits                               |         40 |          4 |       1.20 |   30.07 +-  10.55
+Sum_Tracking                                |         40 |        111 |     130.49 | 3262.21 +-1155.88
+CDCDedxPID                                  |         40 |          0 |       0.34 |    8.61 +-   2.77
+VXDDedxPID                                  |         40 |          0 |       0.08 |    1.90 +-   0.64
+Ext                                         |         40 |          1 |       6.27 |  156.79 +-  98.97
+TOPChannelMasker                            |         40 |          0 |       0.02 |    0.50 +-   1.86
+TOPBunchFinder                              |         40 |          5 |       1.68 |   42.09 +-  22.49
+TOPReconstructor                            |         40 |          0 |       5.36 |  134.11 +-  72.35
+ARICHFillHits                               |         40 |          0 |       0.01 |    0.18 +-   0.10
+ARICHReconstructor                          |         40 |          1 |       0.17 |    4.15 +-   4.59
+Sum_PID                                     |         40 |          8 |      13.93 |  348.31 +- 147.32
+EventT0Combiner                             |         40 |          0 |       0.00 |    0.03 +-   0.02
+ECLFinalizer                                |         40 |          1 |       0.02 |    0.50 +-   0.16
+MCMatcherECLClusters                        |         40 |          0 |       0.21 |    5.28 +-   2.98
+EKLMReconstructor                           |         40 |          0 |       0.00 |    0.12 +-   0.18
+BKLMReconstructor                           |         40 |          0 |       0.01 |    0.13 +-   0.12
+KLMClustersReconstructor                    |         40 |          0 |       0.00 |    0.09 +-   0.09
+MCMatcherKLMClusters                        |         40 |          0 |       0.01 |    0.20 +-   0.13
+Muid                                        |         40 |          0 |       2.22 |   55.56 +-  23.00
+ECLTrackClusterMatching                     |         40 |          1 |       0.46 |   11.46 +-  38.92
+ECLClusterProperties                        |         40 |          0 |       0.13 |    3.37 +-   2.21
+ECLChargedPID                               |         40 |          0 |       0.01 |    0.23 +-   0.09
+MdstPID                                     |         40 |          0 |       0.01 |    0.26 +-   0.10
+KLMExpert                                   |         40 |          0 |       0.01 |    0.20 +-   0.09
+ClusterMatcher                              |         40 |          0 |       0.01 |    0.26 +-   0.13
+ECLTrackBremFinder                          |         40 |          0 |       1.21 |   30.35 +-  39.93
+PruneRecoTracks                             |         40 |          0 |       0.32 |    8.02 +-   3.00
+PruneGenfitTracks                           |         40 |          0 |       0.00 |    0.03 +-   0.02
+Sum_Clustering                              |         40 |          3 |       4.64 |  116.08 +-  73.12
+SoftwareTrigger                             |         40 |          1 |       0.06 |    1.55 +-   4.55
+ParticleLoader_pi+:skim                     |         40 |          0 |       0.02 |    0.49 +-   0.18
+ParticleLoader_gamma:skim                   |         40 |          0 |       0.01 |    0.32 +-   0.12
+SoftwareTrigger                             |         40 |          0 |       0.10 |    2.61 +-   2.16
+Tx                                          |         38 |        100 |       6.48 |  170.61 +-  59.02
+Rx                                          |         40 |         31 |     135.85 | 3396.16 +-2375.19
+=======================================================================================================
+Total (output proc.)                        |         40 |         35 |     136.70 | 3417.43 +-2378.11
+=======================================================================================================
+
+
+_________________________________________________OUTPUT END_________________________________________________
+/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2
+0.292611558157
+_________________________________________________OUTPUT START_________________________________________________
+[INFO] Steering file: bmk.py
+[INFO] The random number seed is set to "12345"
+
+*************************************************************
+ Geant4 version Name: geant4-10-01-patch-02    (19-June-2015)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+[INFO] Starting event processing, random seed is set to '12345'
+[INFO] Input Path [EventInfoSetter -> EvtGenInput]
+[INFO] Main Path [Gearbox -> ... (145 further modules) ... -> SoftwareTrigger ]
+[INFO] Output Path []
+[INFO] Conditions Database: found working server
+	url = http://belle2db.sdcc.bnl.gov/b2s/rest/
+[INFO] Conditions data: configured globaltags (highest priority first) are mc_production_MC13a_rev1, release-04-00-03
+[INFO] SVDClusterCuts: from now on we are using ClusterCalibrations_default_2018-11-22T17:15:14.509000_INFO:_seed=5_adj=3_cls=0_scaleFactors=fromSimulation
+ ... message repeated 3 times
+[INFO] SVDPulseShapeCalibrations: from now on we are using PulseShapeCalibrations_default_2018-11-22T17:15:16.043000_INFO:_peakTime=75_pulseWidth=130_gain=fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDCoGTimeCalibrations: from now on we are using SVDCoGTimeCalibrations_MC_2019-07-30T20:18:02.275349_INFO:_3rdOrderPol_TBindep_lat=+47.16
+ ... message repeated 1 times
+[INFO] SVDNoiseCalibrations: from now on we are using NoiseCalibrations_default_2018-11-22T17:15:15.605000_INFO:_fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDFADCMaskedStrips: from now on we are using FADCMaskedStrips_default_2019-07-02T16:42:18.880884_INFO:_noFADCMaskedstrips
+[INFO] SVDHitTimeSelectionFunction: from now on we are using HitTimeSelection_default_2019-07-17T22:48:45.508791_INFO:_noCut_on_tmin
+ ... message repeated 3 times
+[INFO] Perform Geant4 final initialization: Geometry optimization, PhysicsList calculations...
+[INFO] done, Geant4 ready
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+[INFO] FiltersContainer: Replacing existing filter for setup name: SVDOnlyDefault
+[INFO] ExtManager::Initialize(): Ext will run with FullSim and has initialized the extrapolator
+[INFO] Ext hypothesis for PDG code 11 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 211 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 321 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 2212 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 1000010020 and its antiparticle will be extrapolated
+[INFO] TOPGeometryPar: PMT types mapped to positions, size = 512
+[INFO] TOPconfigure: new map of PMT types has been passed to reconstruction
+[INFO] TOPconfigure: Alignment constants are set in reconstruction
+[INFO] TOPBunchFinder: running in data processing mode
+[INFO] ExtManager::Initialize(): Muid will run with FullSim; the extrapolator has already been initialized
+[INFO] Muid hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: pi+:skim (pi-:skim)
+[INFO]    -> MDST source: Tracks
+[INFO]    -> With cuts  : pt>0.2 and abs(d0) < 2 and abs(z0) < 4
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: gamma:skim (gamma:skim)
+[INFO]    -> MDST source: ECLClusters
+[INFO]    -> With cuts  : E>0.1
+[INFO] ProcHandler: input process forked. pid = 307
+[INFO] ProcHandler: worker process forked. pid = 310
+[INFO] ProcHandler: worker process forked. pid = 311
+[INFO] (10000) input process finished.
+
+  KORB: rho/rhop -> pi-pi0 mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhop  =   1.37000000      0.509999990     -0.109999999    
+  KORB: K*/K*prime -> Kpi mixing:
+  KORB: kstp  =   1.70000005      0.234999999      -3.79999988E-02
+  KORB: a1/a1prime -> 3pi, KKpi mixing:
+  KORB: a1    =   1.27499998      0.699999988    
+  KORB: a1prim=   1.46099997      0.250000000       0.00000000    
+  KORB: K1A/K1B -> Kpipi mixing:
+  KORB: K1A   =   1.26999998       9.00000036E-02   1.00000000    
+  KORB: K1B   =   1.40199995      0.173999995      0.800000012    
+  KORB: rho/rhop/rhopp -> 4pi mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhopp =   1.46500003      0.310000002     -0.109999999    
+  KORB: rhoppp=   1.70000005      0.234999999     -0.109999999    
+  KORB: 3PI-PI0 PARAMS:   0.00000000      0.124200001      0.160400003      0.271100014      0.444299996    
+  KORB: PI-3PI0 PARAMS:   0.00000000       1.00000000    
+  In F3pi: add (rho-pi S-wave) + (rhop-pi S-wave) +
+               (rho-pi D-wave) + (rhop-pi D-wave) +
+    (f2 pi D-wave) + (sigmapi S-wave) + (f0pi S-wave)
+[WARNING] (0) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (0) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (0) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[WARNING] (1) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (1) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (1) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[INFO] (0) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (0) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (0) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (0) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (0) TOPreco: timebase-uncalibrated channels have been masked off
+[INFO] (1) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (1) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (1) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (1) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (1) TOPreco: timebase-uncalibrated channels have been masked off
+[ERROR] (0) In G4MagInt_Driver::AccurateAdvance(), GeomField1001: Proposed step is zero; hstep = 0 !  { module: Ext }
+[WARNING] (1) 158 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (1) The MCTrackFinder created a total of 272 track candidates
+[WARNING] (1) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (1) TOPBunchFinder: event T0 determined for 20/20 events
+[INFO] (1) worker process finished.
+
+[WARNING] (0) 147 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (0) The MCTrackFinder created a total of 262 track candidates
+[WARNING] (0) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (0) TOPBunchFinder: event T0 determined for 20/20 events
+[INFO] (0) worker process finished.
+
+[INFO] (20000) output process finished.
+[INFO] (20000) All processes completed
+[INFO] (20000) Global process: completed
+=======================================================================================================
+Name                                        |      Calls | Memory(MB) |    Time(s) |     Time(ms)/Call
+=======================================================================================================
+EventInfoSetter                             |         40 |          0 |       0.00 |    0.04 +-   0.04
+EvtGenInput                                 |         40 |         88 |      10.80 |  269.91 +-1443.28
+Tx                                          |         39 |         81 |      17.37 |  445.35 +-2719.27
+Rx                                          |         40 |          9 |       0.56 |   13.94 +-   6.54
+Gearbox                                     |         40 |          0 |       0.00 |    0.02 +-   0.00
+Geometry                                    |         40 |          0 |       0.00 |    0.02 +-   0.00
+FullSim                                     |         40 |         35 |     147.27 | 3681.75 +-1478.03
+SVDEventInfoSetter                          |         40 |          0 |       0.00 |    0.04 +-   0.01
+SVDDigitizer                                |         40 |          1 |       0.68 |   17.03 +-   7.11
+CDCDigitizer                                |         40 |          2 |       1.56 |   38.92 +-  19.31
+ActivatePXDPixelMasker                      |         40 |          0 |       0.00 |    0.02 +-   0.00
+ActivatePXDGainCalibrator                   |         40 |          0 |       0.00 |    0.02 +-   0.00
+PXDDigitizer                                |         40 |          1 |       0.04 |    1.03 +-   0.52
+TOPDigitizer                                |         40 |          1 |       0.88 |   22.07 +-  13.73
+ARICHDigitizer                              |         40 |          2 |       0.01 |    0.21 +-   0.16
+ECLDigitizer                                |         40 |          1 |       0.21 |    5.18 +-   1.62
+KLMDigitizer                                |         40 |          0 |       0.07 |    1.65 +-   1.02
+__ROISVDCoGTimeEstimator                    |         40 |          0 |       0.04 |    1.12 +-   0.37
+__ROISVDSimpleClusterizer                   |         40 |          2 |       0.07 |    1.85 +-   1.12
+__ROISVDMissingAPVsClusterCreator           |         40 |          0 |       0.00 |    0.02 +-   0.01
+__ROISVDSpacePointCreator                   |         40 |          0 |       0.04 |    0.96 +-   0.52
+SetupGenfitExtrapolationForPXDDataReduction |         40 |          0 |       0.00 |    0.02 +-   0.00
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+SegmentNetworkProducer                      |         40 |          1 |       0.07 |    1.65 +-   0.90
+TrackFinderVXDCellOMat                      |         40 |          2 |       0.07 |    1.79 +-   2.93
+AddVXDTrackCandidateSubSets                 |         40 |          0 |       0.02 |    0.44 +-   0.30
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.03 |    0.64 +-   0.46
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.01
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.04 +-   0.02
+SVDOverlapResolver                          |         40 |          2 |       0.28 |    7.09 +-   6.73
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.02 |    0.38 +-   0.43
+SPTC2RTConverter                            |         40 |          0 |       0.05 |    1.27 +-   0.47
+SVD-only DAFRecoFitter                      |         40 |          5 |       2.06 |   51.48 +-  22.35
+PXDROIFinder                                |         40 |          0 |       0.30 |    7.61 +-   2.98
+PXDdigiFilter                               |         40 |          0 |       0.02 |    0.46 +-   0.11
+PruneDataStore                              |         40 |          0 |       0.19 |    4.76 +-   0.79
+Sum_Simulation                              |         40 |        232 |     182.71 | 4567.68 +-3688.09
+CDCTriggerTSF                               |         40 |          3 |       0.89 |   22.13 +-   4.62
+CDCTrigger2DFinder                          |         40 |          0 |       0.07 |    1.67 +-   0.80
+CDCTriggerETF                               |         40 |          0 |       0.01 |    0.20 +-   0.05
+CDCTrigger2DFitter                          |         40 |          1 |       0.01 |    0.22 +-   0.10
+CDCTrigger3DFitter                          |         40 |          0 |       0.01 |    0.27 +-   0.12
+CDCTriggerNeuro                             |         40 |          0 |       0.00 |    0.11 +-   0.06
+CDCTriggerTrackCombiner                     |         40 |          1 |       0.01 |    0.26 +-   0.11
+TRGECLFAM                                   |         40 |         38 |       0.61 |   15.20 +-   1.85
+TRGECL                                      |         40 |          0 |       0.02 |    0.58 +-   0.22
+KLMTrigger                                  |         40 |          1 |       0.02 |    0.38 +-   0.21
+TRGGRLMatch                                 |         40 |          1 |       0.01 |    0.24 +-   0.14
+TRGGRLProjects                              |         40 |          0 |       0.01 |    0.20 +-   0.05
+TRGGDL                                      |         40 |          0 |       0.00 |    0.05 +-   0.04
+Sum_TriggerSimulation                       |         40 |         45 |       1.66 |   41.52 +-   5.96
+EventsOfDoomBuster                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+ECLWaveformFit                              |         40 |          0 |       0.35 |    8.74 +-   2.49
+ECLDigitCalibrator                          |         40 |          0 |       0.04 |    1.00 +-   0.32
+ECLEventT0                                  |         40 |          0 |       0.01 |    0.30 +-   0.13
+ECLCRFinder                                 |         40 |          1 |       0.14 |    3.40 +-   1.11
+ECLLocalMaximumFinder                       |         40 |          0 |       0.01 |    0.30 +-   0.08
+ECLSplitterN1                               |         40 |          0 |       0.08 |    2.05 +-   1.25
+ECLSplitterN2                               |         40 |          0 |       0.02 |    0.57 +-   0.16
+ECLShowerCorrector                          |         40 |          0 |       0.00 |    0.05 +-   0.02
+ECLShowerCalibrator                         |         40 |          0 |       0.00 |    0.02 +-   0.00
+ECLShowerShape                              |         40 |          0 |       0.08 |    1.97 +-   0.55
+ECLClusterPSD                               |         40 |          0 |       0.02 |    0.46 +-   0.11
+ECLCovarianceMatrix                         |         40 |          0 |       0.00 |    0.03 +-   0.01
+Sum_Clustering                              |         40 |          1 |       0.76 |   18.92 +-   5.45
+SVDCoGTimeEstimator                         |         40 |          0 |       0.04 |    0.91 +-   0.29
+SVDSimpleClusterizer                        |         40 |          0 |       0.05 |    1.37 +-   0.41
+SVDMissingAPVsClusterCreator                |         40 |          0 |       0.00 |    0.02 +-   0.00
+SVDSpacePointCreator                        |         40 |          0 |       0.03 |    0.73 +-   0.25
+PXDClusterizer                              |         40 |          0 |       0.01 |    0.24 +-   0.09
+TFCDC_WireHitPreparer                       |         40 |          0 |       0.12 |    3.04 +-   0.94
+TFCDC_ClusterPreparer                       |         40 |          1 |       0.19 |    4.82 +-   2.32
+TFCDC_SegmentFinderFacetAutomaton           |         40 |          4 |       2.20 |   54.97 +-  27.13
+TFCDC_AxialTrackFinderLegendre              |         40 |          3 |       1.28 |   31.94 +-  20.39
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.02 |    0.38 +-   0.12
+TFCDC_StereoHitFinder                       |         40 |          0 |       0.40 |    9.99 +-   4.60
+TFCDC_SegmentTrackCombiner                  |         40 |          0 |       0.18 |    4.53 +-   2.17
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.04 |    1.07 +-   0.42
+TFCDC_TrackExporter                         |         40 |          0 |       0.20 |    5.00 +-   1.70
+IPTrackTimeEstimator                        |         40 |          1 |       0.00 |    0.05 +-   0.03
+CDCHitBasedT0Extraction                     |         40 |         17 |       1.24 |   30.95 +- 135.94
+CDCTrackingEventLevelMdstInfoFiller         |         40 |          0 |       0.00 |    0.05 +-   0.02
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_backward              |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_backward              |         40 |          6 |      11.61 |  290.23 +- 163.25
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_forward               |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_forward               |         40 |          0 |       0.19 |    4.72 +-   8.39
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+SegmentNetworkProducer                      |         40 |          0 |       0.03 |    0.67 +-   0.55
+TrackFinderVXDCellOMat                      |         40 |          0 |       0.02 |    0.52 +-   2.00
+AddVXDTrackCandidateSubSets                 |         40 |          0 |       0.00 |    0.10 +-   0.09
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.01 |    0.13 +-   0.23
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.00
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.02 +-   0.01
+SVDOverlapResolver                          |         40 |          0 |       0.05 |    1.34 +-   4.07
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.00 |    0.12 +-   0.04
+SPTC2RTConverter                            |         40 |          0 |       0.01 |    0.32 +-   0.15
+DAFRecoFitter                               |         40 |          0 |       0.12 |    2.98 +-   7.01
+CDCToSVDSeedCKF_backward                    |         40 |          0 |       0.14 |    3.55 +-   7.42
+DAFRecoFitter                               |         40 |          0 |       0.11 |    2.77 +-   7.03
+CDCToSVDSeedCKF_forward                     |         40 |          0 |       0.15 |    3.72 +-   7.35
+RelatedTracksCombiner                       |         40 |          1 |       1.02 |   25.46 +-  15.23
+ToCDCCKF                                    |         40 |          1 |       1.29 |   32.26 +-  28.89
+CDCCKFTracksCombiner                        |         40 |          1 |       0.38 |    9.39 +-   3.24
+PruneRecoTracks                             |         40 |          0 |       0.02 |    0.38 +-   0.11
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.03 +-   0.01
+PXDSpacePointCreator                        |         40 |          0 |       0.00 |    0.11 +-   0.05
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_backward                           |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          9 |      12.32 |  307.96 +- 127.36
+ToPXDCKF_backward                           |         40 |          1 |       0.31 |    7.75 +-  24.53
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_forward                            |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          0 |       0.18 |    4.42 +-  16.99
+ToPXDCKF_forward                            |         40 |          0 |       0.23 |    5.63 +-  25.24
+RelatedTracksCombiner                       |         40 |          1 |       0.64 |   16.12 +-  26.40
+PruneRecoTracks                             |         40 |          0 |       0.11 |    2.84 +-   0.92
+PruneRecoTracks                             |         40 |          0 |       0.01 |    0.18 +-   0.06
+PruneRecoTracks                             |         40 |          0 |       0.12 |    2.88 +-   0.99
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.05 +-   0.01
+FullGridChi2TrackTimeExtractor              |         40 |          5 |      17.66 |  441.45 +- 141.95
+TrackFinderMCTruthRecoTracks                |         40 |          1 |       0.50 |   12.58 +-   4.24
+MCRecoTracksMatcher                         |         40 |          0 |       0.79 |   19.63 +-   8.39
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.07 +-   0.01
+Combined_DAFRecoFitter                      |         40 |          0 |      12.98 |  324.46 +- 101.37
+TrackCreator                                |         40 |         22 |      24.16 |  603.96 +- 195.38
+V0Finder                                    |         40 |         34 |      36.09 |  902.26 +- 515.82
+PruneRecoHits                               |         40 |          2 |       1.28 |   32.06 +-  11.39
+Sum_Tracking                                |         40 |        111 |     128.53 | 3213.27 +-1176.12
+CDCDedxPID                                  |         40 |          0 |       0.37 |    9.13 +-   2.86
+VXDDedxPID                                  |         40 |          0 |       0.08 |    2.05 +-   0.68
+Ext                                         |         40 |          1 |       6.12 |  153.01 +-  84.39
+TOPChannelMasker                            |         40 |          0 |       0.02 |    0.42 +-   1.53
+TOPBunchFinder                              |         40 |          5 |       1.73 |   43.28 +-  25.56
+TOPReconstructor                            |         40 |          1 |       5.02 |  125.52 +-  63.02
+ARICHFillHits                               |         40 |          0 |       0.01 |    0.19 +-   0.12
+ARICHReconstructor                          |         40 |          1 |       0.19 |    4.77 +-   7.35
+Sum_PID                                     |         40 |          8 |      13.53 |  338.35 +- 125.85
+EventT0Combiner                             |         40 |          0 |       0.00 |    0.03 +-   0.02
+ECLFinalizer                                |         40 |          1 |       0.02 |    0.52 +-   0.16
+MCMatcherECLClusters                        |         40 |          0 |       0.21 |    5.19 +-   2.48
+EKLMReconstructor                           |         40 |          0 |       0.00 |    0.11 +-   0.17
+BKLMReconstructor                           |         40 |          0 |       0.01 |    0.15 +-   0.26
+KLMClustersReconstructor                    |         40 |          0 |       0.00 |    0.09 +-   0.10
+MCMatcherKLMClusters                        |         40 |          0 |       0.01 |    0.21 +-   0.13
+Muid                                        |         40 |          0 |       2.24 |   56.00 +-  22.48
+ECLTrackClusterMatching                     |         40 |          1 |       0.35 |    8.69 +-  25.36
+ECLClusterProperties                        |         40 |          0 |       0.13 |    3.14 +-   1.36
+ECLChargedPID                               |         40 |          0 |       0.01 |    0.24 +-   0.09
+MdstPID                                     |         40 |          0 |       0.01 |    0.26 +-   0.09
+KLMExpert                                   |         40 |          0 |       0.01 |    0.20 +-   0.10
+ClusterMatcher                              |         40 |          0 |       0.01 |    0.26 +-   0.13
+ECLTrackBremFinder                          |         40 |          0 |       1.19 |   29.65 +-  31.02
+PruneRecoTracks                             |         40 |          0 |       0.33 |    8.25 +-   3.55
+PruneGenfitTracks                           |         40 |          0 |       0.00 |    0.03 +-   0.02
+Sum_Clustering                              |         40 |          3 |       4.52 |  113.03 +-  55.53
+SoftwareTrigger                             |         40 |          1 |       0.12 |    2.99 +-  13.09
+ParticleLoader_pi+:skim                     |         40 |          0 |       0.02 |    0.49 +-   0.19
+ParticleLoader_gamma:skim                   |         40 |          0 |       0.02 |    0.60 +-   1.76
+SoftwareTrigger                             |         40 |          0 |       0.09 |    2.24 +-   1.00
+Tx                                          |         38 |        100 |       6.57 |  172.84 +-  68.57
+Rx                                          |         40 |         32 |     135.93 | 3398.18 +-2374.60
+=======================================================================================================
+Total (output proc.)                        |         40 |         34 |     136.92 | 3422.94 +-2376.85
+=======================================================================================================
+
+
+_________________________________________________OUTPUT END_________________________________________________
+[doOne (2)] Mon Aug 31 21:17:45 CEST 2020 completed (status=0)
+
+[doOneWrapper (2)] Mon Aug 31 21:17:45 CEST 2020 : process 2 (pid=74) completed ok
+
+/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1
+0.292141396436
+[doOne (1)] Mon Aug 31 21:17:45 CEST 2020 completed (status=0)
+
+[doOneWrapper (1)] Mon Aug 31 21:17:45 CEST 2020 : process 1 (pid=35) completed ok
+
+
+------------------------------------------------------------------------
+[bmk-driver.sh] all 2 processes completed successfully
+------------------------------------------------------------------------
+
+[bmk-driver.sh] parse results and generate summary: starting
+[bmk-driver.sh] current directory : /results/belle2-gen-sim-reco-c2-e20-1598900935_1683
+
+[parseResults] parse results and generate summary (previous status: 0)
+0.584752954593
+0.584752954593
+{ "copies" : 2 , "threads_per_copy" : 2 , "events_per_thread" : 20 , "throughput_score" : 0.584752954593 , "log": "OK", "app" : "belle2-gen-sim-reco-bmk" }
+
+[bmk-driver.sh] parse results and generate summary: completed (status=0)
+
+[bmk-driver.sh] json file validation: starting
+[bmk-driver.sh] lint json file '/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/belle2-gen-sim-reco_summary.json' syntax using jq
+{"app":"belle2-gen-sim-reco-bmk","log":"OK","throughput_score":0.584752954593,"events_per_thread":20,"threads_per_copy":2,"copies":2}
+[bmk-driver.sh] json file validation: completed (status=0)
+
+[bmk-driver.sh] exiting back to belle2-gen-sim-reco-bmk.sh
+
+========================================================================
+[bmk-driver.sh] Mon Aug 31 21:17:45 CEST 2020 exiting common benchmark driver (status=0)
+========================================================================
+
+Mon Aug 31 21:17:46 CEST 2020 [execute_command] 'docker run --rm -v /tmp/root/logs/noCI-20200831-120721-816257833/results:/results -v /tmp/root/logs/noCI-20200831-120721-816257833/build-wl:/tmp/root/logs/noCI-20200831-120721-816257833/build-wl -w /tmp/root/logs/noCI-20200831-120721-816257833/build-wl -v /tmp/root/cvmfs_hep/noCI-20200831-120721-816257833:/cvmfs:shared belle2-gen-sim-reco-bmk:cvmfs-shrink -e 20 -c 2 -d'\nReturn code: 0
+[run_docker_wl] Run WL in docker (to extract cvmfs) via execute_command - completed
+
+[run_docker_wl] cvmfs flush trace for belle
+OK
+[run_docker_wl] validate json file
+[validate_jsonfile] JSON FILE: /tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/belle2-gen-sim-reco_summary.json
+[validate_jsonfile] lint json file syntax using jq
+{"copies":2,"threads_per_copy":2,"events_per_thread":20,"throughput_score":0.584752954593,"log":"OK","app":"belle2-gen-sim-reco-bmk"}
+[run_docker_wl] finished at Mon Aug 31 21:17:49 CEST 2020
+[run_shrinkwrap] ................................................
+[run_shrinkwrap] starting at Mon Aug 31 21:17:49 CEST 2020
+[run_shrinkwrap] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+MAIN_CVMFSEXPORTDIR /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-export/
+[run_shrinkwrap] ... shrinking   cvmfs-belle.cern.ch.trace.log
+[run_shrinkwrap] specname cvmfs-belle.cern.ch.spec.txt
+[run_shrinkwrap] reponame belle.cern.ch
+Mon Aug 31 21:17:49 CEST 2020
+[run_shrinkwrap] python /usr/libexec/cvmfs/shrinkwrap/spec_builder.py --policy=exact /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-traces//cvmfs-belle.cern.ch.trace.log /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-traces//cvmfs-belle.cern.ch.spec.txt
+Parsing file: /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-traces//cvmfs-belle.cern.ch.trace.log
+Output file: /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-traces//cvmfs-belle.cern.ch.spec.txt
+Policy: exact
+Filters: None
+[run_shrinkwrap] saving cvmfs-belle.cern.ch.spec.txt on /tmp/root/logs/noCI-20200831-120721-816257833/results/cvmfs-belle.cern.ch.spec.txt
+Mon Aug 31 21:17:49 CEST 2020
+[run_shrinkwrap] cvmfs_shrinkwrap --repo belle.cern.ch --src-config /tmp/root/logs/noCI-20200831-120721-816257833/generic_config.cern.ch.config --spec-file /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-traces//cvmfs-belle.cern.ch.spec.txt --dest-base /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-export//cvmfs/ -j 4
+LibCvmfs version 2.6, revision 28
+Starting 4 workers
+cntByte|168|Byte count of projected repository
+cntDir|13|Number of directories from source repository
+cntFile|1|Number of files from source repository
+cntSymlink|1|Number of symlinks from source repository
+dataBytes|0|Bytes transfered from source to destination
+dataBytesDeduped|0|Number of bytes not copied due to deduplication
+dataFiles|1|Number of data files transfered from source to destination
+dataFilesDeduped|0|Number of files not copied due to deduplication
+entriesDest|15|Number of file system entries processed in the destination
+entriesSrc|15|Number of file system entries processed in the source
+
+cntByte|231808999|Byte count of projected repository
+cntDir|744|Number of directories from source repository
+cntFile|4421|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|1714656|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|4162|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|6106|Number of file system entries processed in the destination
+entriesSrc|6106|Number of file system entries processed in the source
+
+cntByte|233419738|Byte count of projected repository
+cntDir|750|Number of directories from source repository
+cntFile|4954|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|4921525|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|4439|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|6389|Number of file system entries processed in the destination
+entriesSrc|6389|Number of file system entries processed in the source
+
+cntByte|234579369|Byte count of projected repository
+cntDir|751|Number of directories from source repository
+cntFile|5384|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|18484487|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|4613|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|6564|Number of file system entries processed in the destination
+entriesSrc|6564|Number of file system entries processed in the source
+
+cntByte|240289392|Byte count of projected repository
+cntDir|760|Number of directories from source repository
+cntFile|5994|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|37783229|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|4967|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|6927|Number of file system entries processed in the destination
+entriesSrc|6927|Number of file system entries processed in the source
+
+cntByte|241063514|Byte count of projected repository
+cntDir|799|Number of directories from source repository
+cntFile|6420|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|63132040|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|5137|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|7136|Number of file system entries processed in the destination
+entriesSrc|7136|Number of file system entries processed in the source
+
+cntByte|242858068|Byte count of projected repository
+cntDir|847|Number of directories from source repository
+cntFile|6927|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|81954730|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|5388|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|7435|Number of file system entries processed in the destination
+entriesSrc|7435|Number of file system entries processed in the source
+
+cntByte|243568563|Byte count of projected repository
+cntDir|863|Number of directories from source repository
+cntFile|7479|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|208887197|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|5684|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|7747|Number of file system entries processed in the destination
+entriesSrc|7747|Number of file system entries processed in the source
+
+cntByte|244622555|Byte count of projected repository
+cntDir|883|Number of directories from source repository
+cntFile|7944|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|210623970|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|5893|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|7976|Number of file system entries processed in the destination
+entriesSrc|7976|Number of file system entries processed in the source
+
+cntByte|247747712|Byte count of projected repository
+cntDir|916|Number of directories from source repository
+cntFile|8457|Number of files from source repository
+cntSymlink|1197|Number of symlinks from source repository
+dataBytes|214147279|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|6150|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|8266|Number of file system entries processed in the destination
+entriesSrc|8266|Number of file system entries processed in the source
+
+cntByte|378423665|Byte count of projected repository
+cntDir|937|Number of directories from source repository
+cntFile|9002|Number of files from source repository
+cntSymlink|1202|Number of symlinks from source repository
+dataBytes|221868906|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|6439|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|8581|Number of file system entries processed in the destination
+entriesSrc|8581|Number of file system entries processed in the source
+
+cntByte|1735728813|Byte count of projected repository
+cntDir|1080|Number of directories from source repository
+cntFile|10508|Number of files from source repository
+cntSymlink|1466|Number of symlinks from source repository
+dataBytes|226862074|Bytes transfered from source to destination
+dataBytesDeduped|231988|Number of bytes not copied due to deduplication
+dataFiles|7177|Number of data files transfered from source to destination
+dataFilesDeduped|3|Number of files not copied due to deduplication
+entriesDest|9726|Number of file system entries processed in the destination
+entriesSrc|9726|Number of file system entries processed in the source
+
+cntByte|1747161924|Byte count of projected repository
+cntDir|1399|Number of directories from source repository
+cntFile|11065|Number of files from source repository
+cntSymlink|1466|Number of symlinks from source repository
+dataBytes|228336375|Bytes transfered from source to destination
+dataBytesDeduped|234858|Number of bytes not copied due to deduplication
+dataFiles|7473|Number of data files transfered from source to destination
+dataFilesDeduped|8|Number of files not copied due to deduplication
+entriesDest|10346|Number of file system entries processed in the destination
+entriesSrc|10346|Number of file system entries processed in the source
+
+cntByte|1900809702|Byte count of projected repository
+cntDir|1409|Number of directories from source repository
+cntFile|11553|Number of files from source repository
+cntSymlink|1478|Number of symlinks from source repository
+dataBytes|229721329|Bytes transfered from source to destination
+dataBytesDeduped|234858|Number of bytes not copied due to deduplication
+dataFiles|7705|Number of data files transfered from source to destination
+dataFilesDeduped|8|Number of files not copied due to deduplication
+entriesDest|10600|Number of file system entries processed in the destination
+entriesSrc|10600|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|11802|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|229947667|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|12012|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|231282175|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|12244|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|232706704|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|12470|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|233979226|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|12706|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|235939270|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|12936|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|240313772|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|13188|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|241545497|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|13446|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|243081785|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|13698|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|243648451|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|13945|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|245533966|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14151|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|268144129|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14369|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|378234676|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14542|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|559293949|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14719|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|787960321|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14893|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1050838135|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|14994|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1442816587|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|15142|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1736375762|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|15367|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1744403482|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|15607|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1749574084|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|15783|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1915953123|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+Stopping 4 workers
+Name|Value|Description
+cntByte|1992469721|Byte count of projected repository
+cntDir|1554|Number of directories from source repository
+cntFile|15845|Number of files from source repository
+cntSymlink|1481|Number of symlinks from source repository
+dataBytes|1992053214|Bytes transfered from source to destination
+dataBytesDeduped|416507|Number of bytes not copied due to deduplication
+dataFiles|7918|Number of data files transfered from source to destination
+dataFilesDeduped|9|Number of files not copied due to deduplication
+entriesDest|10962|Number of file system entries processed in the destination
+entriesSrc|10962|Number of file system entries processed in the source
+
+Mon Aug 31 21:24:41 CEST 2020
+[run_shrinkwrap] finished at Mon Aug 31 21:24:41 CEST 2020
+[copy_cvmfs] ................................................
+[copy_cvmfs] starting at Mon Aug 31 21:24:41 CEST 2020
+[copy_cvmfs] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[copy_cvmfs] remove /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-export//cvmfs/.data
+/tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+Mon Aug 31 21:24:45 CEST 2020
+[copy_cvmfs] removing cvmfs dir in /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/
+[copy_cvmfs] mv /tmp/root/logs/noCI-20200831-120721-816257833/cvmfs-export//cvmfs /tmp/root/logs/noCI-20200831-120721-816257833/build-wl 
+[copy_cvmfs] /cvmfs contents copied to /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/cvmfs
+total 12
+drwxr-xr-x  2 root root 4096 Aug 31 21:24 EMPTYDIR
+drwxr-xr-x 15 root root 4096 Aug 31 21:18 belle.cern.ch
+drwxr-xr-x  3 root root 4096 Aug 31 21:24 cms.cern.ch
+[copy_cvmfs] move /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/cvmfs/.provenance to /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/cvmfs.provenance
+[copy_cvmfs] finished at Mon Aug 31 21:24:45 CEST 2020
+[build_standalone_image] ................................................
+[build_standalone_image] starting at Mon Aug 31 21:24:45 CEST 2020
+[build_standalone_image] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[build_standalone_image] theimage: belle2-gen-sim-reco-bmk:v0.15
+[build_docker_image] ................................................
+[build_docker_image] starting at Mon Aug 31 21:24:45 CEST 2020
+[build_docker_image] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[build_docker_image]  belle2-gen-sim-reco-bmk:v0.15
+[generate_Dockerfile] Input hepwlSpecFile: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[generate_Dockerfile] Input dockerCommonHeader: ./common/Dockerfile.header
+[generate_Dockerfile] Input dockerCommonTemplate: ./common/Dockerfile.template
+[load_and_validate_specfile] HEPWL SPEC FILE: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate spec file name
+[load_and_validate_specfile] experiment: belle2-gen-sim
+[load_and_validate_specfile] workload: gen-sim-reco
+[load_and_validate_specfile] source /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/belle2-gen-sim-reco.spec
+[load_and_validate_specfile] validate HEPWL_ environment variables
+[load_and_validate_specfile] OK
+[generate_Dockerfile] Successfully generated: /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/Dockerfile
+# ********** DOCKERFILE HEADER start **********
+# ******* PLEASE DO NOT EDIT THIS FILE! *******
+# This is the common header for all HEP workloads (BMK-124 and BMK-159).
+# Please add workload-specific instructions in Dockerfile.append.
+
+FROM gitlab-registry.cern.ch/linuxsupport/slc6-base:latest
+
+# Append 'yum clean all' to work around https://github.com/CentOS/sig-cloud-instance-images/issues/15
+# But use '&& yum clean all' instead of '; yum clean all' to stop the build in case of errors!
+
+RUN yum install -y which man file util-linux gcc wget tar freetype perl jq && yum clean all
+
+# Prepare a data directory for downloading large files that should normally be cacheable (BMK-159)
+# Its contents should be retrieved in Dockerfile.append, before /bmk/<bmkdir> is copied over
+# Each file it contains is then individually symlinked to /bmk/<bmkdir>/data/<file> in Dockerfile.template
+RUN mkdir -p /bmk/data
+
+# ********** DOCKERFILE HEADER  end  **********
+
+# Add here any workload-specific Dockerfile instructions.
+# They will be appended to the Dockerfile generated from a common template.
+
+RUN yum install -y git && yum clean all
+
+# ********* DOCKERFILE TEMPLATE start *********
+# ******* PLEASE DO NOT EDIT THIS FILE! *******
+# This is the common template for all HEP workloads (BMK-124 and BMK-159).
+# Please add workload-specific instructions in Dockerfile.append.
+
+# Optionally allow disabling the cache only from this point onwards if using
+#   docker build -t your-image --build-arg CACHEBUST=$(date +%s) .
+# See https://github.com/moby/moby/issues/1996#issuecomment-185872769
+
+###ARG CACHEBUST=1
+
+###RUN echo CACHEBUST=$CACHEBUST
+
+# This should normally contain always the same files and be cacheable (BMK-159)
+COPY ./cvmfs /cvmfs
+
+RUN tar -cf /tmp/cvmfs_checksum.tar /cvmfs && md5sum /tmp/cvmfs_checksum.tar | cut -f1 -d" " > /tmp/cvmfs_checksum && rm /tmp/cvmfs_checksum.tar
+
+# This should normally contain always the same files and be cacheable (BMK-159)
+RUN tar -cf /tmp/bmkdata_checksum.tar /bmk/data && md5sum /tmp/bmkdata_checksum.tar | cut -f1 -d" " > /tmp/bmkdata_checksum && rm /tmp/bmkdata_checksum.tar
+
+# This may also be cacheable in most cases except when /bmk contents change
+COPY ./belle2-gen-sim-reco /bmk/./belle2-gen-sim-reco
+
+COPY common/bmk-driver.sh /bmk/./belle2-gen-sim-reco/bmk-driver.sh 
+
+RUN if [ ! -d /bmk/./belle2-gen-sim-reco/data ]; then mkdir /bmk/./belle2-gen-sim-reco/data; fi
+
+RUN for file in $(cd /bmk/data; ls); do ln -sf /bmk/data/$file /bmk/./belle2-gen-sim-reco/data/$file; done
+
+RUN tar -cf /tmp/bmk_checksum.tar /bmk && md5sum /tmp/bmk_checksum.tar | cut -f1 -d" " > /tmp/bmk_checksum && rm /tmp/bmk_checksum.tar
+
+RUN cvmfs_checksum=`cat /tmp/cvmfs_checksum` && bmkdata_checksum=`cat /tmp/bmkdata_checksum` && bmk_checksum=`cat /tmp/bmk_checksum` && rm /tmp/cvmfs_checksum /tmp/bmkdata_checksum /tmp/bmk_checksum && echo '{"version":"v0.15","description":"belle2-gen-sim-reco-bmk","cvmfs_checksum":"'$cvmfs_checksum'","bmkdata_checksum":"'$bmkdata_checksum'","bmk_checksum":"'$bmk_checksum'"}' > /bmk/./belle2-gen-sim-reco/version.json
+
+LABEL multi.maintainer="Domenico Giordano <domenico.giordano@cern.ch>" \
+      multi.version="0.1" \
+      multi.description="belle2-gen-sim-reco-bmk"
+
+ENTRYPOINT ["/bmk/./belle2-gen-sim-reco/belle2-gen-sim-reco-bmk.sh"]
+
+# This contains provenance data that can never be cached
+COPY ./cvmfs.provenance /cvmfs.provenance
+
+# Add user 'bmkuser' to run benchmarks as a non-root user (BMK-166 and BMK-167)
+RUN groupadd bmkuser
+
+RUN useradd -g bmkuser --create-home --shell /bin/bash bmkuser
+
+# ********* DOCKERFILE TEMPLATE  end  *********
+
+[build_docker_image] docker build of belle2-gen-sim-reco-bmk:v0.15 starting at Mon Aug 31 21:24:45 CEST 2020
+
+Sending build context to Docker daemon  4.582GB
+Step 1/18 : FROM gitlab-registry.cern.ch/linuxsupport/slc6-base:latest
+ ---> 6f5226de3508
+Step 2/18 : RUN yum install -y which man file util-linux gcc wget tar freetype perl jq && yum clean all
+ ---> Using cache
+ ---> 203e42c669bd
+Step 3/18 : RUN mkdir -p /bmk/data
+ ---> Using cache
+ ---> 157e45a00346
+Step 4/18 : RUN yum install -y git && yum clean all
+ ---> Using cache
+ ---> fb21757b4daa
+Step 5/18 : COPY ./cvmfs /cvmfs
+ ---> Using cache
+ ---> 9e1fcf79bbde
+Step 6/18 : RUN tar -cf /tmp/cvmfs_checksum.tar /cvmfs && md5sum /tmp/cvmfs_checksum.tar | cut -f1 -d" " > /tmp/cvmfs_checksum && rm /tmp/cvmfs_checksum.tar
+ ---> Using cache
+ ---> 17598831634a
+Step 7/18 : RUN tar -cf /tmp/bmkdata_checksum.tar /bmk/data && md5sum /tmp/bmkdata_checksum.tar | cut -f1 -d" " > /tmp/bmkdata_checksum && rm /tmp/bmkdata_checksum.tar
+ ---> Using cache
+ ---> 27f6e797a86d
+Step 8/18 : COPY ./belle2-gen-sim-reco /bmk/./belle2-gen-sim-reco
+ ---> 3e4c6c61ef2e
+Step 9/18 : COPY common/bmk-driver.sh /bmk/./belle2-gen-sim-reco/bmk-driver.sh
+ ---> 25b967bba34c
+Step 10/18 : RUN if [ ! -d /bmk/./belle2-gen-sim-reco/data ]; then mkdir /bmk/./belle2-gen-sim-reco/data; fi
+ ---> Running in 8f62da78795c
+Removing intermediate container 8f62da78795c
+ ---> 643958272cad
+Step 11/18 : RUN for file in $(cd /bmk/data; ls); do ln -sf /bmk/data/$file /bmk/./belle2-gen-sim-reco/data/$file; done
+ ---> Running in 9dd12f59157e
+Removing intermediate container 9dd12f59157e
+ ---> 224bc7f1a127
+Step 12/18 : RUN tar -cf /tmp/bmk_checksum.tar /bmk && md5sum /tmp/bmk_checksum.tar | cut -f1 -d" " > /tmp/bmk_checksum && rm /tmp/bmk_checksum.tar
+ ---> Running in da53cf9a0376
+[91mtar: Removing leading `/' from member names
+[0mRemoving intermediate container da53cf9a0376
+ ---> f33b4c1142f1
+Step 13/18 : RUN cvmfs_checksum=`cat /tmp/cvmfs_checksum` && bmkdata_checksum=`cat /tmp/bmkdata_checksum` && bmk_checksum=`cat /tmp/bmk_checksum` && rm /tmp/cvmfs_checksum /tmp/bmkdata_checksum /tmp/bmk_checksum && echo '{"version":"v0.15","description":"belle2-gen-sim-reco-bmk","cvmfs_checksum":"'$cvmfs_checksum'","bmkdata_checksum":"'$bmkdata_checksum'","bmk_checksum":"'$bmk_checksum'"}' > /bmk/./belle2-gen-sim-reco/version.json
+ ---> Running in 5f2f0d804933
+Removing intermediate container 5f2f0d804933
+ ---> 88b578c596ea
+Step 14/18 : LABEL multi.maintainer="Domenico Giordano <domenico.giordano@cern.ch>"       multi.version="0.1"       multi.description="belle2-gen-sim-reco-bmk"
+ ---> Running in 8a5fa270ecb1
+Removing intermediate container 8a5fa270ecb1
+ ---> 74cbe6caec82
+Step 15/18 : ENTRYPOINT ["/bmk/./belle2-gen-sim-reco/belle2-gen-sim-reco-bmk.sh"]
+ ---> Running in 8e2cc992626a
+Removing intermediate container 8e2cc992626a
+ ---> 8e57343a43e4
+Step 16/18 : COPY ./cvmfs.provenance /cvmfs.provenance
+ ---> af735d4477a6
+Step 17/18 : RUN groupadd bmkuser
+ ---> Running in 95eb1dde1c16
+Removing intermediate container 95eb1dde1c16
+ ---> afbd6281f59f
+Step 18/18 : RUN useradd -g bmkuser --create-home --shell /bin/bash bmkuser
+ ---> Running in f60b640ceece
+Removing intermediate container f60b640ceece
+ ---> 6ff86308913a
+Successfully built 6ff86308913a
+Successfully tagged belle2-gen-sim-reco-bmk:v0.15
+[build_docker_image] finished at Mon Aug 31 21:26:16 CEST 2020
+[build_standalone_image] finished at Mon Aug 31 21:26:16 CEST 2020
+[clean_cvmfs_copy] ................................................
+[clean_cvmfs_copy] starting at Mon Aug 31 21:26:16 CEST 2020
+[clean_cvmfs_copy] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+remove cvmfs copy /tmp/root/logs/noCI-20200831-120721-816257833/build-wl/cvmfs
+[clean_cvmfs_copy] finished at Mon Aug 31 21:26:17 CEST 2020
+[test_standalone_image_docker] ................................................
+[test_standalone_image_docker] starting at Mon Aug 31 21:26:17 CEST 2020
+[test_standalone_image_docker] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[test_standalone_image_docker] theimage: belle2-gen-sim-reco-bmk:v0.15
+
+[test_standalone_image_docker] Run WL in docker (to test the image) via execute_command - started
+Mon Aug 31 21:26:17 CEST 2020 [execute_command] Executing 'docker run --rm -v /tmp/root/logs/noCI-20200831-120721-816257833/results:/results belle2-gen-sim-reco-bmk:v0.15 -e 20 -c 2 -d'
+
+[bmk-driver.sh] Parse input arguments '-e 20 -c 2 -d'
+
+
+========================================================================
+[bmk-driver.sh] Mon Aug 31 21:26:18 CEST 2020 entering common benchmark driver
+========================================================================
+
+[bmk-driver.sh] entering from belle2-gen-sim-reco-bmk.sh
+
+[bmk-driver.sh] benchmark directory BMKDIR=/bmk/belle2-gen-sim-reco:
+
+/bmk/belle2-gen-sim-reco:
+total 44
+-rw-r--r-- 1 root root   216 Aug 31 21:25 version.json
+drwxr-xr-x 2 root root     6 Aug 31 21:25 data
+-rw-r--r-- 1 root root  2671 Aug 31 21:07 output
+-rwxr-xr-x 1 root root  5555 Aug 31 21:07 belle2-gen-sim-reco-bmk.sh
+drwxr-xr-x 3 root root   121 Aug 21 02:39 bmk-04-01-05
+-rwxr-xr-x 1 root root   427 Aug 21 01:51 parsetwo.py
+-rwxr-xr-x 1 root root   353 Aug 21 01:51 parse.py
+-rw-r--r-- 1 root root 17068 Aug 21 01:50 bmk-driver.sh
+
+/bmk/belle2-gen-sim-reco/data:
+total 0
+
+/bmk/belle2-gen-sim-reco/bmk-04-01-05:
+total 8
+-rw-r--r-- 1 root root 1613 Aug 21 02:39 bmk.py
+-rw-r--r-- 1 root root  357 Aug 21 02:27 SConscript
+lrwxrwxrwx 1 root root   21 Aug 21 02:27 SConstruct -> site_scons/SConstruct
+lrwxrwxrwx 1 root root   61 Aug 21 02:27 site_scons -> /cvmfs/belle.cern.ch/el7/releases/release-04-01-05/site_scons
+
+[bmk-driver.sh] data directory /bmk/belle2-gen-sim-reco/../data:
+
+/bmk/belle2-gen-sim-reco/../data:
+total 0
+
+Default (from belle2-gen-sim-reco-bmk.sh): NCOPIES=4
+Default (from belle2-gen-sim-reco-bmk.sh): NTHREADS=2
+Default (from belle2-gen-sim-reco-bmk.sh): NEVENTS_THREAD=1
+
+Default (from bmk-driver.sh): USER_NCOPIES=2
+Default (from bmk-driver.sh): USER_NTHREADS=
+Default (from bmk-driver.sh): USER_NEVENTS_THREAD=20
+
+Default (from bmk-driver.sh): resultsDir=/results
+Default (from bmk-driver.sh): skipSubDir=0
+Default (from bmk-driver.sh): DEBUG=1
+
+Current value: USER_NCOPIES=2
+Current value: USER_NTHREADS=
+Current value: USER_NEVENTS_THREAD=20
+
+Current value: resultsDir=/results
+Current value: skipSubDir=0
+Current value: DEBUG=1
+
+[bmk-driver.sh] function 'validateInputArguments' starting
+
+[validateInputArguments] validate input arguments
+
+[bmk-driver.sh] function 'validateInputArguments' completed (status=0)
+
+[bmk-driver.sh] base working directory : /results/belle2-gen-sim-reco-c2-e20-1598901978_5044
+
+Current value: NCOPIES=2
+Current value: NTHREADS=2
+Current value: NEVENTS_THREAD=20
+
+[bmk-driver.sh] APP=belle2-gen-sim-reco
+
+------------------------------------------------------------------------
+[bmk-driver.sh] spawn 2 processes
+------------------------------------------------------------------------
+
+[bmk-driver.sh] spawned process 1 with pid 34
+
+[doOneWrapper (1)] Mon Aug 31 21:26:18 CEST 2020 : process 1 started
+[doOneWrapper (1)] workdir is /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1
+[doOneWrapper (1)] logfile is /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1/doOneWrapper_1.log
+[doOneWrapper (1)] Mon Aug 31 21:26:18 CEST 2020 : process 1 configured
+[doOneWrapper (1)] HOME=/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1/HOME
+[doOneWrapper (1)] current process pid is 34
+[doOneWrapper (1)] inside docker - run doOne as bmkuser
+
+[doOne (1)] Mon Aug 31 21:26:18 CEST 2020 starting in /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1
+[doOne (1)] do one! (process 1 of 2)
+Belle II software tools set up at: /cvmfs/belle.cern.ch/tools
+[bmk-driver.sh] spawned process 2 with pid 109
+
+[doOneWrapper (2)] Mon Aug 31 21:26:18 CEST 2020 : process 2 started
+[doOneWrapper (2)] workdir is /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2
+[doOneWrapper (2)] logfile is /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2/doOneWrapper_2.log
+[doOneWrapper (2)] Mon Aug 31 21:26:18 CEST 2020 : process 2 configured
+[doOneWrapper (2)] HOME=/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2/HOME
+[doOneWrapper (2)] current process pid is 109
+[doOneWrapper (2)] inside docker - run doOne as bmkuser
+
+[doOne (2)] Mon Aug 31 21:26:18 CEST 2020 starting in /results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2
+[doOne (2)] do one! (process 2 of 2)
+Belle II software tools set up at: /cvmfs/belle.cern.ch/tools
+
+[bmk-driver.sh] Mon Aug 31 21:26:19 CEST 2020 ... waiting for spawned processes with pid's 34 109
+
+Environment setup for release: release-04-01-05
+Central release directory    : /cvmfs/belle.cern.ch/sl6/releases/release-04-01-05
+Executing the following number of threads:
+2
+Environment setup for release: release-04-01-05
+Central release directory    : /cvmfs/belle.cern.ch/sl6/releases/release-04-01-05
+Executing the following number of threads:
+2
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+Error in <TStreamerInfo::Build>: Belle2::DirectedNodeNetworkContainer, unknown type: Belle2::TrackNode* m_VirtualInteractionPoint
+
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::ActiveSector<Belle2::StaticSector<Belle2::SpacePoint,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTimeUside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DistanceInTimeVside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance2DXYSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance1DZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::SlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DNormed<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTime<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Angle3DSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CosAngleXY<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::AngleRZSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleDist2IP<Belle2::SpacePoint>,Belle2::ClosedUpperBoundedSet<double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeZoverS<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSoverZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::HelixParameterFit<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Pt<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleRadius<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,int>,Belle2::TrackNode>,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_ActiveSectorNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::TrackNode,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_HitNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::Segment<Belle2::TrackNode>,Belle2::CACell> has no streamer or dictionary, data member "m_SegmentNetwork" will not be saved
+_________________________________________________OUTPUT START_________________________________________________
+[INFO] Steering file: bmk.py
+[INFO] The random number seed is set to "12345"
+
+*************************************************************
+ Geant4 version Name: geant4-10-01-patch-02    (19-June-2015)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+[INFO] Starting event processing, random seed is set to '12345'
+[INFO] Input Path [EventInfoSetter -> EvtGenInput]
+[INFO] Main Path [Gearbox -> ... (145 further modules) ... -> SoftwareTrigger ]
+[INFO] Output Path []
+[INFO] Conditions Database: found working server
+	url = http://belle2db.sdcc.bnl.gov/b2s/rest/
+[INFO] Conditions data: configured globaltags (highest priority first) are mc_production_MC13a_rev1, release-04-00-03
+[INFO] SVDClusterCuts: from now on we are using ClusterCalibrations_default_2018-11-22T17:15:14.509000_INFO:_seed=5_adj=3_cls=0_scaleFactors=fromSimulation
+ ... message repeated 3 times
+[INFO] SVDPulseShapeCalibrations: from now on we are using PulseShapeCalibrations_default_2018-11-22T17:15:16.043000_INFO:_peakTime=75_pulseWidth=130_gain=fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDCoGTimeCalibrations: from now on we are using SVDCoGTimeCalibrations_MC_2019-07-30T20:18:02.275349_INFO:_3rdOrderPol_TBindep_lat=+47.16
+ ... message repeated 1 times
+[INFO] SVDNoiseCalibrations: from now on we are using NoiseCalibrations_default_2018-11-22T17:15:15.605000_INFO:_fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDFADCMaskedStrips: from now on we are using FADCMaskedStrips_default_2019-07-02T16:42:18.880884_INFO:_noFADCMaskedstrips
+[INFO] SVDHitTimeSelectionFunction: from now on we are using HitTimeSelection_default_2019-07-17T22:48:45.508791_INFO:_noCut_on_tmin
+ ... message repeated 3 times
+[INFO] Perform Geant4 final initialization: Geometry optimization, PhysicsList calculations...
+[INFO] done, Geant4 ready
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+[INFO] FiltersContainer: Replacing existing filter for setup name: SVDOnlyDefault
+[INFO] ExtManager::Initialize(): Ext will run with FullSim and has initialized the extrapolator
+[INFO] Ext hypothesis for PDG code 11 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 211 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 321 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 2212 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 1000010020 and its antiparticle will be extrapolated
+[INFO] TOPGeometryPar: PMT types mapped to positions, size = 512
+[INFO] TOPconfigure: new map of PMT types has been passed to reconstruction
+[INFO] TOPconfigure: Alignment constants are set in reconstruction
+[INFO] TOPBunchFinder: running in data processing mode
+[INFO] ExtManager::Initialize(): Muid will run with FullSim; the extrapolator has already been initialized
+[INFO] Muid hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: pi+:skim (pi-:skim)
+[INFO]    -> MDST source: Tracks
+[INFO]    -> With cuts  : pt>0.2 and abs(d0) < 2 and abs(z0) < 4
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: gamma:skim (gamma:skim)
+[INFO]    -> MDST source: ECLClusters
+[INFO]    -> With cuts  : E>0.1
+[INFO] ProcHandler: input process forked. pid = 309
+[INFO] ProcHandler: worker process forked. pid = 310
+[INFO] ProcHandler: worker process forked. pid = 311
+[INFO] (10000) input process finished.
+
+  KORB: rho/rhop -> pi-pi0 mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhop  =   1.37000000      0.509999990     -0.109999999    
+  KORB: K*/K*prime -> Kpi mixing:
+  KORB: kstp  =   1.70000005      0.234999999      -3.79999988E-02
+  KORB: a1/a1prime -> 3pi, KKpi mixing:
+  KORB: a1    =   1.27499998      0.699999988    
+  KORB: a1prim=   1.46099997      0.250000000       0.00000000    
+  KORB: K1A/K1B -> Kpipi mixing:
+  KORB: K1A   =   1.26999998       9.00000036E-02   1.00000000    
+  KORB: K1B   =   1.40199995      0.173999995      0.800000012    
+  KORB: rho/rhop/rhopp -> 4pi mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhopp =   1.46500003      0.310000002     -0.109999999    
+  KORB: rhoppp=   1.70000005      0.234999999     -0.109999999    
+  KORB: 3PI-PI0 PARAMS:   0.00000000      0.124200001      0.160400003      0.271100014      0.444299996    
+  KORB: PI-3PI0 PARAMS:   0.00000000       1.00000000    
+  In F3pi: add (rho-pi S-wave) + (rhop-pi S-wave) +
+               (rho-pi D-wave) + (rhop-pi D-wave) +
+    (f2 pi D-wave) + (sigmapi S-wave) + (f0pi S-wave)
+[WARNING] (0) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (0) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (0) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[WARNING] (1) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (1) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (1) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[INFO] (0) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (0) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (0) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (0) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (0) TOPreco: timebase-uncalibrated channels have been masked off
+[INFO] (1) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (1) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (1) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (1) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (1) TOPreco: timebase-uncalibrated channels have been masked off
+[ERROR] (0) In G4MagInt_Driver::AccurateAdvance(), GeomField1001: Proposed step is zero; hstep = 0 !  { module: Ext }
+[WARNING] (0) 155 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (0) The MCTrackFinder created a total of 269 track candidates
+[WARNING] (0) There were 2 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (0) TOPBunchFinder: event T0 determined for 22/22 events
+[INFO] (0) worker process finished.
+
+[WARNING] (1) 150 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (1) The MCTrackFinder created a total of 265 track candidates
+[RESULT] (1) TOPBunchFinder: event T0 determined for 18/18 events
+[INFO] (1) worker process finished.
+
+[INFO] (20000) output process finished.
+[INFO] (20000) All processes completed
+[INFO] (20000) Global process: completed
+=======================================================================================================
+Name                                        |      Calls | Memory(MB) |    Time(s) |     Time(ms)/Call
+=======================================================================================================
+EventInfoSetter                             |         40 |          0 |       0.00 |    0.04 +-   0.01
+EvtGenInput                                 |         40 |         88 |       4.05 |  101.15 +- 421.28
+Tx                                          |         39 |         83 |       2.55 |   65.46 +- 377.65
+Rx                                          |         40 |          9 |       0.52 |   13.12 +-   6.78
+Gearbox                                     |         40 |          0 |       0.00 |    0.02 +-   0.00
+Geometry                                    |         40 |          0 |       0.00 |    0.02 +-   0.00
+FullSim                                     |         40 |         37 |     143.38 | 3584.41 +-1467.63
+SVDEventInfoSetter                          |         40 |          0 |       0.00 |    0.04 +-   0.01
+SVDDigitizer                                |         40 |          1 |       0.72 |   18.04 +-   7.35
+CDCDigitizer                                |         40 |          3 |       1.67 |   41.66 +-  18.99
+ActivatePXDPixelMasker                      |         40 |          0 |       0.00 |    0.02 +-   0.00
+ActivatePXDGainCalibrator                   |         40 |          0 |       0.00 |    0.02 +-   0.00
+PXDDigitizer                                |         40 |          0 |       0.04 |    1.08 +-   0.58
+TOPDigitizer                                |         40 |          2 |       0.92 |   22.97 +-  13.46
+ARICHDigitizer                              |         40 |          2 |       0.01 |    0.23 +-   0.21
+ECLDigitizer                                |         40 |          0 |       0.21 |    5.17 +-   1.59
+KLMDigitizer                                |         40 |          0 |       0.07 |    1.71 +-   0.88
+__ROISVDCoGTimeEstimator                    |         40 |          0 |       0.05 |    1.19 +-   0.39
+__ROISVDSimpleClusterizer                   |         40 |          1 |       0.07 |    1.80 +-   0.59
+__ROISVDMissingAPVsClusterCreator           |         40 |          0 |       0.00 |    0.02 +-   0.01
+__ROISVDSpacePointCreator                   |         40 |          1 |       0.04 |    0.93 +-   0.32
+SetupGenfitExtrapolationForPXDDataReduction |         40 |          0 |       0.00 |    0.02 +-   0.00
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+SegmentNetworkProducer                      |         40 |          1 |       0.06 |    1.52 +-   0.90
+TrackFinderVXDCellOMat                      |         40 |          0 |       0.07 |    1.74 +-   2.69
+AddVXDTrackCandidateSubSets                 |         40 |          1 |       0.04 |    0.93 +-   2.99
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.03 |    0.65 +-   0.45
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.01
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.05 +-   0.03
+SVDOverlapResolver                          |         40 |          1 |       0.29 |    7.22 +-   6.68
+SPTCmomentumSeedRetriever                   |         40 |          2 |       0.03 |    0.63 +-   1.58
+SPTC2RTConverter                            |         40 |          0 |       0.05 |    1.30 +-   0.52
+SVD-only DAFRecoFitter                      |         40 |          4 |       2.20 |   54.95 +-  25.22
+PXDROIFinder                                |         40 |          0 |       0.31 |    7.83 +-   2.70
+PXDdigiFilter                               |         40 |          1 |       0.02 |    0.46 +-   0.12
+PruneDataStore                              |         40 |          0 |       0.20 |    4.89 +-   0.57
+Sum_Simulation                              |         40 |        236 |     157.59 | 3939.70 +-1662.68
+CDCTriggerTSF                               |         40 |          2 |       0.91 |   22.64 +-   5.68
+CDCTrigger2DFinder                          |         40 |          0 |       0.07 |    1.66 +-   0.78
+CDCTriggerETF                               |         40 |          0 |       0.01 |    0.20 +-   0.04
+CDCTrigger2DFitter                          |         40 |          1 |       0.01 |    0.22 +-   0.09
+CDCTrigger3DFitter                          |         40 |          1 |       0.01 |    0.28 +-   0.18
+CDCTriggerNeuro                             |         40 |          0 |       0.00 |    0.12 +-   0.08
+CDCTriggerTrackCombiner                     |         40 |          0 |       0.01 |    0.26 +-   0.11
+TRGECLFAM                                   |         40 |         38 |       0.63 |   15.68 +-   2.95
+TRGECL                                      |         40 |          0 |       0.02 |    0.59 +-   0.28
+KLMTrigger                                  |         40 |          0 |       0.02 |    0.38 +-   0.20
+TRGGRLMatch                                 |         40 |          1 |       0.01 |    0.25 +-   0.13
+TRGGRLProjects                              |         40 |          0 |       0.01 |    0.19 +-   0.03
+TRGGDL                                      |         40 |          0 |       0.00 |    0.05 +-   0.04
+Sum_TriggerSimulation                       |         40 |         43 |       1.70 |   42.52 +-   8.54
+EventsOfDoomBuster                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+ECLWaveformFit                              |         40 |          1 |       0.35 |    8.78 +-   2.44
+ECLDigitCalibrator                          |         40 |          0 |       0.04 |    1.02 +-   0.33
+ECLEventT0                                  |         40 |          0 |       0.01 |    0.31 +-   0.13
+ECLCRFinder                                 |         40 |          1 |       0.14 |    3.54 +-   0.99
+ECLLocalMaximumFinder                       |         40 |          0 |       0.01 |    0.31 +-   0.09
+ECLSplitterN1                               |         40 |          0 |       0.08 |    2.01 +-   1.02
+ECLSplitterN2                               |         40 |          0 |       0.02 |    0.59 +-   0.14
+ECLShowerCorrector                          |         40 |          0 |       0.00 |    0.05 +-   0.01
+ECLShowerCalibrator                         |         40 |          0 |       0.00 |    0.02 +-   0.01
+ECLShowerShape                              |         40 |          0 |       0.08 |    1.95 +-   0.46
+ECLClusterPSD                               |         40 |          0 |       0.02 |    0.47 +-   0.11
+ECLCovarianceMatrix                         |         40 |          0 |       0.00 |    0.03 +-   0.01
+Sum_Clustering                              |         40 |          2 |       0.76 |   19.11 +-   4.98
+SVDCoGTimeEstimator                         |         40 |          0 |       0.04 |    0.94 +-   0.27
+SVDSimpleClusterizer                        |         40 |          0 |       0.06 |    1.43 +-   0.42
+SVDMissingAPVsClusterCreator                |         40 |          0 |       0.00 |    0.02 +-   0.00
+SVDSpacePointCreator                        |         40 |          0 |       0.03 |    0.75 +-   0.25
+PXDClusterizer                              |         40 |          0 |       0.01 |    0.26 +-   0.15
+TFCDC_WireHitPreparer                       |         40 |          0 |       0.12 |    2.98 +-   0.91
+TFCDC_ClusterPreparer                       |         40 |          0 |       0.19 |    4.87 +-   2.19
+TFCDC_SegmentFinderFacetAutomaton           |         40 |          4 |       2.26 |   56.57 +-  27.44
+TFCDC_AxialTrackFinderLegendre              |         40 |          3 |       1.34 |   33.41 +-  22.07
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.02 |    0.39 +-   0.13
+TFCDC_StereoHitFinder                       |         40 |          0 |       0.43 |   10.67 +-   5.51
+TFCDC_SegmentTrackCombiner                  |         40 |          0 |       0.19 |    4.86 +-   2.47
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.04 |    1.11 +-   0.34
+TFCDC_TrackExporter                         |         40 |          2 |       0.21 |    5.16 +-   1.53
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.06 +-   0.04
+CDCHitBasedT0Extraction                     |         40 |         15 |       0.24 |    5.91 +-  15.89
+CDCTrackingEventLevelMdstInfoFiller         |         40 |          0 |       0.00 |    0.05 +-   0.02
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.01
+CDCToSVDSpacePointCKF_backward              |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_backward              |         40 |          6 |      11.90 |  297.45 +- 157.12
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_forward               |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_forward               |         40 |          0 |       0.42 |   10.57 +-  37.35
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.00
+SegmentNetworkProducer                      |         40 |          0 |       0.03 |    0.74 +-   0.66
+TrackFinderVXDCellOMat                      |         40 |          0 |       0.02 |    0.52 +-   1.93
+AddVXDTrackCandidateSubSets                 |         40 |          0 |       0.00 |    0.11 +-   0.11
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.01
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.01 |    0.14 +-   0.27
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.00
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.02 +-   0.01
+SVDOverlapResolver                          |         40 |          0 |       0.06 |    1.44 +-   4.33
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.01 |    0.13 +-   0.05
+SPTC2RTConverter                            |         40 |          0 |       0.01 |    0.35 +-   0.19
+DAFRecoFitter                               |         40 |          0 |       0.10 |    2.59 +-   6.10
+CDCToSVDSeedCKF_backward                    |         40 |          0 |       0.12 |    3.10 +-   6.02
+DAFRecoFitter                               |         40 |          0 |       0.09 |    2.34 +-   5.96
+CDCToSVDSeedCKF_forward                     |         40 |          0 |       0.14 |    3.55 +-   7.24
+RelatedTracksCombiner                       |         40 |          1 |       1.02 |   25.39 +-  13.52
+ToCDCCKF                                    |         40 |          1 |       1.38 |   34.47 +-  34.68
+CDCCKFTracksCombiner                        |         40 |          0 |       0.38 |    9.45 +-   2.96
+PruneRecoTracks                             |         40 |          0 |       0.02 |    0.39 +-   0.12
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.04 +-   0.01
+PXDSpacePointCreator                        |         40 |          0 |       0.00 |    0.11 +-   0.04
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_backward                           |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          9 |      12.90 |  322.59 +- 119.47
+ToPXDCKF_backward                           |         40 |          1 |       0.30 |    7.51 +-  26.49
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_forward                            |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          0 |       0.23 |    5.82 +-  26.33
+ToPXDCKF_forward                            |         40 |          0 |       0.24 |    6.11 +-  27.02
+RelatedTracksCombiner                       |         40 |          1 |       0.65 |   16.14 +-  26.72
+PruneRecoTracks                             |         40 |          0 |       0.11 |    2.78 +-   0.74
+PruneRecoTracks                             |         40 |          0 |       0.01 |    0.17 +-   0.06
+PruneRecoTracks                             |         40 |          0 |       0.13 |    3.15 +-   1.84
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.05 +-   0.01
+FullGridChi2TrackTimeExtractor              |         40 |          4 |      18.00 |  449.95 +- 128.29
+TrackFinderMCTruthRecoTracks                |         40 |          0 |       0.52 |   13.04 +-   4.94
+MCRecoTracksMatcher                         |         40 |          0 |       0.79 |   19.81 +-   8.16
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.07 +-   0.01
+Combined_DAFRecoFitter                      |         40 |          0 |      12.66 |  316.47 +- 103.14
+TrackCreator                                |         40 |         20 |      23.91 |  597.76 +- 175.32
+V0Finder                                    |         40 |         38 |      35.83 |  895.71 +- 496.90
+PruneRecoHits                               |         40 |          1 |       1.23 |   30.87 +-  10.50
+Sum_Tracking                                |         40 |        110 |     128.42 | 3210.50 +-1094.66
+CDCDedxPID                                  |         40 |          0 |       0.35 |    8.76 +-   3.06
+VXDDedxPID                                  |         40 |          0 |       0.08 |    1.92 +-   0.69
+Ext                                         |         40 |          1 |       6.39 |  159.80 +- 108.71
+TOPChannelMasker                            |         40 |          0 |       0.02 |    0.54 +-   2.07
+TOPBunchFinder                              |         40 |          5 |       1.68 |   42.06 +-  23.89
+TOPReconstructor                            |         40 |          0 |       5.26 |  131.43 +-  67.67
+ARICHFillHits                               |         40 |          0 |       0.01 |    0.17 +-   0.09
+ARICHReconstructor                          |         40 |          1 |       0.17 |    4.31 +-   4.89
+Sum_PID                                     |         40 |          7 |      13.96 |  349.00 +- 155.04
+EventT0Combiner                             |         40 |          0 |       0.00 |    0.03 +-   0.01
+ECLFinalizer                                |         40 |          1 |       0.02 |    0.53 +-   0.14
+MCMatcherECLClusters                        |         40 |          0 |       0.21 |    5.27 +-   2.39
+EKLMReconstructor                           |         40 |          0 |       0.00 |    0.11 +-   0.16
+BKLMReconstructor                           |         40 |          0 |       0.01 |    0.13 +-   0.11
+KLMClustersReconstructor                    |         40 |          0 |       0.00 |    0.10 +-   0.09
+MCMatcherKLMClusters                        |         40 |          0 |       0.01 |    0.20 +-   0.13
+Muid                                        |         40 |          0 |       2.25 |   56.27 +-  20.31
+ECLTrackClusterMatching                     |         40 |          2 |       0.32 |    7.94 +-  22.90
+ECLClusterProperties                        |         40 |          0 |       0.13 |    3.21 +-   1.41
+ECLChargedPID                               |         40 |          0 |       0.01 |    0.25 +-   0.08
+MdstPID                                     |         40 |          0 |       0.01 |    0.27 +-   0.10
+KLMExpert                                   |         40 |          0 |       0.01 |    0.19 +-   0.10
+ClusterMatcher                              |         40 |          0 |       0.01 |    0.27 +-   0.14
+ECLTrackBremFinder                          |         40 |          0 |       1.25 |   31.27 +-  38.77
+PruneRecoTracks                             |         40 |          0 |       0.32 |    7.89 +-   2.46
+PruneGenfitTracks                           |         40 |          0 |       0.00 |    0.03 +-   0.02
+Sum_Clustering                              |         40 |          4 |       4.56 |  113.96 +-  56.36
+SoftwareTrigger                             |         40 |          0 |       0.03 |    0.64 +-   0.57
+ParticleLoader_pi+:skim                     |         40 |          1 |       0.02 |    0.51 +-   0.17
+ParticleLoader_gamma:skim                   |         40 |          0 |       0.01 |    0.35 +-   0.13
+SoftwareTrigger                             |         40 |          0 |       0.09 |    2.32 +-   1.11
+Tx                                          |         38 |         91 |       6.71 |  176.51 +-  82.20
+Rx                                          |         40 |         26 |     142.31 | 3557.81 +-2338.05
+=======================================================================================================
+Total (output proc.)                        |         40 |         27 |     143.22 | 3580.50 +-2339.95
+=======================================================================================================
+
+
+_________________________________________________OUTPUT END_________________________________________________
+/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1
+0.279290601871
+[doOne (1)] Mon Aug 31 21:30:19 CEST 2020 completed (status=0)
+
+[doOneWrapper (1)] Mon Aug 31 21:30:19 CEST 2020 : process 1 (pid=34) completed ok
+
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::ActiveSector<Belle2::StaticSector<Belle2::SpacePoint,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTimeUside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DistanceInTimeVside<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance2DXYSquared<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance1DZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::SlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Distance3DNormed<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::OperatorAnd,Belle2::Filter<Belle2::DistanceInTime<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Angle3DSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CosAngleXY<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::AngleRZSimple<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleDist2IP<Belle2::SpacePoint>,Belle2::ClosedUpperBoundedSet<double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeRZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSlopeZoverS<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::DeltaSoverZ<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::HelixParameterFit<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::Pt<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,Belle2::Filter<Belle2::CircleRadius<Belle2::SpacePoint>,Belle2::ClosedRange<double,double>,Belle2::VoidObserver>,Belle2::VoidObserver>,int>,Belle2::TrackNode>,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_ActiveSectorNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::TrackNode,Belle2::VoidMetaInfo> has no streamer or dictionary, data member "m_HitNetwork" will not be saved
+TStreamerInfo::Build:0: RuntimeWarning: Belle2::DirectedNodeNetworkContainer: Belle2::DirectedNodeNetwork<Belle2::Segment<Belle2::TrackNode>,Belle2::CACell> has no streamer or dictionary, data member "m_SegmentNetwork" will not be saved
+_________________________________________________OUTPUT START_________________________________________________
+[INFO] Steering file: bmk.py
+[INFO] The random number seed is set to "12345"
+
+*************************************************************
+ Geant4 version Name: geant4-10-01-patch-02    (19-June-2015)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+[INFO] Starting event processing, random seed is set to '12345'
+[INFO] Input Path [EventInfoSetter -> EvtGenInput]
+[INFO] Main Path [Gearbox -> ... (145 further modules) ... -> SoftwareTrigger ]
+[INFO] Output Path []
+[INFO] Conditions Database: found working server
+	url = http://belle2db.sdcc.bnl.gov/b2s/rest/
+[INFO] Conditions data: configured globaltags (highest priority first) are mc_production_MC13a_rev1, release-04-00-03
+[INFO] SVDClusterCuts: from now on we are using ClusterCalibrations_default_2018-11-22T17:15:14.509000_INFO:_seed=5_adj=3_cls=0_scaleFactors=fromSimulation
+ ... message repeated 3 times
+[INFO] SVDPulseShapeCalibrations: from now on we are using PulseShapeCalibrations_default_2018-11-22T17:15:16.043000_INFO:_peakTime=75_pulseWidth=130_gain=fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDCoGTimeCalibrations: from now on we are using SVDCoGTimeCalibrations_MC_2019-07-30T20:18:02.275349_INFO:_3rdOrderPol_TBindep_lat=+47.16
+ ... message repeated 1 times
+[INFO] SVDNoiseCalibrations: from now on we are using NoiseCalibrations_default_2018-11-22T17:15:15.605000_INFO:_fromPhase3calibrations
+ ... message repeated 3 times
+[INFO] SVDFADCMaskedStrips: from now on we are using FADCMaskedStrips_default_2019-07-02T16:42:18.880884_INFO:_noFADCMaskedstrips
+[INFO] SVDHitTimeSelectionFunction: from now on we are using HitTimeSelection_default_2019-07-17T22:48:45.508791_INFO:_noCut_on_tmin
+ ... message repeated 3 times
+[INFO] Perform Geant4 final initialization: Geometry optimization, PhysicsList calculations...
+[INFO] done, Geant4 ready
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO 1e-06
+[INFO] FiltersContainer: Replacing existing filter for setup name: SVDOnlyDefault
+[INFO] ExtManager::Initialize(): Ext will run with FullSim and has initialized the extrapolator
+[INFO] Ext hypothesis for PDG code 11 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 211 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 321 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 2212 and its antiparticle will be extrapolated
+[INFO] Ext hypothesis for PDG code 1000010020 and its antiparticle will be extrapolated
+[INFO] TOPGeometryPar: PMT types mapped to positions, size = 512
+[INFO] TOPconfigure: new map of PMT types has been passed to reconstruction
+[INFO] TOPconfigure: Alignment constants are set in reconstruction
+[INFO] TOPBunchFinder: running in data processing mode
+[INFO] ExtManager::Initialize(): Muid will run with FullSim; the extrapolator has already been initialized
+[INFO] Muid hypothesis for PDG code 13 and its antiparticle will be extrapolated
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: pi+:skim (pi-:skim)
+[INFO]    -> MDST source: Tracks
+[INFO]    -> With cuts  : pt>0.2 and abs(d0) < 2 and abs(z0) < 4
+[INFO] ParticleLoader's Summary of Actions:
+[INFO]  o) creating (anti-)ParticleList with name: gamma:skim (gamma:skim)
+[INFO]    -> MDST source: ECLClusters
+[INFO]    -> With cuts  : E>0.1
+[INFO] ProcHandler: input process forked. pid = 306
+[INFO] ProcHandler: worker process forked. pid = 307
+[INFO] ProcHandler: worker process forked. pid = 308
+[INFO] (10000) input process finished.
+
+  KORB: rho/rhop -> pi-pi0 mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhop  =   1.37000000      0.509999990     -0.109999999    
+  KORB: K*/K*prime -> Kpi mixing:
+  KORB: kstp  =   1.70000005      0.234999999      -3.79999988E-02
+  KORB: a1/a1prime -> 3pi, KKpi mixing:
+  KORB: a1    =   1.27499998      0.699999988    
+  KORB: a1prim=   1.46099997      0.250000000       0.00000000    
+  KORB: K1A/K1B -> Kpipi mixing:
+  KORB: K1A   =   1.26999998       9.00000036E-02   1.00000000    
+  KORB: K1B   =   1.40199995      0.173999995      0.800000012    
+  KORB: rho/rhop/rhopp -> 4pi mixing:
+  KORB: rho   =  0.769900024      0.151199996    
+  KORB: rhopp =   1.46500003      0.310000002     -0.109999999    
+  KORB: rhoppp=   1.70000005      0.234999999     -0.109999999    
+  KORB: 3PI-PI0 PARAMS:   0.00000000      0.124200001      0.160400003      0.271100014      0.444299996    
+  KORB: PI-3PI0 PARAMS:   0.00000000       1.00000000    
+  In F3pi: add (rho-pi S-wave) + (rhop-pi S-wave) +
+               (rho-pi D-wave) + (rhop-pi D-wave) +
+    (f2 pi D-wave) + (sigmapi S-wave) + (f0pi S-wave)
+[WARNING] (0) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (0) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (0) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[WARNING] (1) ARICHReconstruction: Aerogel tile alignment is not available so it will not be used  { module: ARICHReconstructor }
+[INFO] (1) TOPGeometryPar: envelope of PMT dependent QE has been set
+[INFO] (1) TOPGeometryPar: QE of PMT's mapped to positions, size = 512
+[INFO] (0) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (0) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (0) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (0) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (0) TOPreco: timebase-uncalibrated channels have been masked off
+[INFO] (1) TOPGeometryPar: pixel relative quantum efficiencies have been set, size = 8192
+[INFO] (1) TOPreco: new relative pixel efficiencies have been passed to reconstruction
+[INFO] (1) TOPreco: new channel masks have been passed to reconstruction
+[INFO] (1) TOPreco: channelT0-uncalibrated channels have been masked off
+[INFO] (1) TOPreco: timebase-uncalibrated channels have been masked off
+[ERROR] (0) In G4MagInt_Driver::AccurateAdvance(), GeomField1001: Proposed step is zero; hstep = 0 !  { module: Ext }
+[WARNING] (0) 136 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (0) The MCTrackFinder created a total of 260 track candidates
+[WARNING] (0) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (0) TOPBunchFinder: event T0 determined for 21/21 events
+[INFO] (0) worker process finished.
+
+[WARNING] (1) 169 tracks had not enough hits to have at least 5 number of degrees of freedom (NDF). No Track Candidates were created from them so they will not be passed to the track fitter  { module: TrackFinderMCTruthRecoTracks }
+[INFO] (1) The MCTrackFinder created a total of 274 track candidates
+[WARNING] (1) There were 1 tracks skipped because of zero charge for pi+:skim  { module: ParticleLoader_pi+:skim }
+[RESULT] (1) TOPBunchFinder: event T0 determined for 19/19 events
+[INFO] (1) worker process finished.
+
+[INFO] (20000) output process finished.
+[INFO] (20000) All processes completed
+[INFO] (20000) Global process: completed
+=======================================================================================================
+Name                                        |      Calls | Memory(MB) |    Time(s) |     Time(ms)/Call
+=======================================================================================================
+EventInfoSetter                             |         40 |          0 |       0.00 |    0.04 +-   0.00
+EvtGenInput                                 |         40 |         89 |       4.43 |  110.65 +- 472.36
+Tx                                          |         39 |         81 |       2.32 |   59.44 +- 340.49
+Rx                                          |         40 |          9 |       0.60 |   14.91 +-   8.11
+Gearbox                                     |         40 |          0 |       0.00 |    0.02 +-   0.00
+Geometry                                    |         40 |          0 |       0.00 |    0.02 +-   0.00
+FullSim                                     |         40 |         36 |     145.65 | 3641.32 +-1509.05
+SVDEventInfoSetter                          |         40 |          0 |       0.00 |    0.04 +-   0.01
+SVDDigitizer                                |         40 |          1 |       0.64 |   15.97 +-   5.40
+CDCDigitizer                                |         40 |          1 |       1.52 |   38.03 +-  16.55
+ActivatePXDPixelMasker                      |         40 |          0 |       0.00 |    0.02 +-   0.00
+ActivatePXDGainCalibrator                   |         40 |          0 |       0.00 |    0.02 +-   0.00
+PXDDigitizer                                |         40 |          1 |       0.04 |    1.02 +-   0.49
+TOPDigitizer                                |         40 |          1 |       0.86 |   21.55 +-  12.57
+ARICHDigitizer                              |         40 |          2 |       0.01 |    0.22 +-   0.21
+ECLDigitizer                                |         40 |          2 |       0.22 |    5.61 +-   2.94
+KLMDigitizer                                |         40 |          0 |       0.07 |    1.79 +-   1.07
+__ROISVDCoGTimeEstimator                    |         40 |          0 |       0.05 |    1.17 +-   0.37
+__ROISVDSimpleClusterizer                   |         40 |          2 |       0.07 |    1.73 +-   0.54
+__ROISVDMissingAPVsClusterCreator           |         40 |          0 |       0.00 |    0.02 +-   0.01
+__ROISVDSpacePointCreator                   |         40 |          0 |       0.04 |    0.89 +-   0.32
+SetupGenfitExtrapolationForPXDDataReduction |         40 |          0 |       0.00 |    0.02 +-   0.00
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.00
+SegmentNetworkProducer                      |         40 |          1 |       0.06 |    1.50 +-   0.92
+TrackFinderVXDCellOMat                      |         40 |          1 |       0.07 |    1.75 +-   2.90
+AddVXDTrackCandidateSubSets                 |         40 |          1 |       0.02 |    0.43 +-   0.29
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.03 |    0.63 +-   0.45
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.01
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.04 +-   0.02
+SVDOverlapResolver                          |         40 |          2 |       0.28 |    7.10 +-   6.60
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.01 |    0.36 +-   0.29
+SPTC2RTConverter                            |         40 |          0 |       0.05 |    1.21 +-   0.36
+SVD-only DAFRecoFitter                      |         40 |          4 |       2.15 |   53.85 +-  21.79
+PXDROIFinder                                |         40 |          1 |       0.32 |    7.95 +-   2.47
+PXDdigiFilter                               |         40 |          0 |       0.02 |    0.49 +-   0.14
+PruneDataStore                              |         40 |          0 |       0.20 |    5.05 +-   0.65
+Sum_Simulation                              |         40 |        235 |     159.74 | 3993.39 +-1717.52
+CDCTriggerTSF                               |         40 |          2 |       0.94 |   23.56 +-   5.48
+CDCTrigger2DFinder                          |         40 |          1 |       0.07 |    1.70 +-   0.79
+CDCTriggerETF                               |         40 |          0 |       0.01 |    0.20 +-   0.04
+CDCTrigger2DFitter                          |         40 |          0 |       0.01 |    0.23 +-   0.09
+CDCTrigger3DFitter                          |         40 |          0 |       0.01 |    0.29 +-   0.15
+CDCTriggerNeuro                             |         40 |          0 |       0.00 |    0.12 +-   0.09
+CDCTriggerTrackCombiner                     |         40 |          0 |       0.01 |    0.27 +-   0.12
+TRGECLFAM                                   |         40 |         40 |       0.64 |   16.04 +-   2.63
+TRGECL                                      |         40 |          0 |       0.02 |    0.58 +-   0.22
+KLMTrigger                                  |         40 |          0 |       0.02 |    0.39 +-   0.22
+TRGGRLMatch                                 |         40 |          1 |       0.01 |    0.25 +-   0.15
+TRGGRLProjects                              |         40 |          0 |       0.01 |    0.19 +-   0.04
+TRGGDL                                      |         40 |          0 |       0.00 |    0.05 +-   0.04
+Sum_TriggerSimulation                       |         40 |         45 |       1.75 |   43.87 +-   8.18
+EventsOfDoomBuster                          |         40 |          0 |       0.00 |    0.02 +-   0.01
+ECLWaveformFit                              |         40 |          0 |       0.35 |    8.68 +-   2.34
+ECLDigitCalibrator                          |         40 |          0 |       0.04 |    1.02 +-   0.34
+ECLEventT0                                  |         40 |          0 |       0.01 |    0.31 +-   0.13
+ECLCRFinder                                 |         40 |          0 |       0.14 |    3.46 +-   1.08
+ECLLocalMaximumFinder                       |         40 |          0 |       0.01 |    0.31 +-   0.11
+ECLSplitterN1                               |         40 |          0 |       0.08 |    2.07 +-   1.26
+ECLSplitterN2                               |         40 |          0 |       0.02 |    0.59 +-   0.16
+ECLShowerCorrector                          |         40 |          0 |       0.00 |    0.05 +-   0.02
+ECLShowerCalibrator                         |         40 |          0 |       0.00 |    0.02 +-   0.00
+ECLShowerShape                              |         40 |          0 |       0.08 |    2.00 +-   0.55
+ECLClusterPSD                               |         40 |          0 |       0.02 |    0.47 +-   0.12
+ECLCovarianceMatrix                         |         40 |          0 |       0.00 |    0.03 +-   0.01
+Sum_Clustering                              |         40 |          1 |       0.76 |   19.03 +-   5.28
+SVDCoGTimeEstimator                         |         40 |          0 |       0.04 |    0.97 +-   0.32
+SVDSimpleClusterizer                        |         40 |          0 |       0.06 |    1.45 +-   0.41
+SVDMissingAPVsClusterCreator                |         40 |          0 |       0.00 |    0.02 +-   0.00
+SVDSpacePointCreator                        |         40 |          0 |       0.03 |    0.76 +-   0.25
+PXDClusterizer                              |         40 |          0 |       0.01 |    0.26 +-   0.15
+TFCDC_WireHitPreparer                       |         40 |          0 |       0.12 |    3.08 +-   0.87
+TFCDC_ClusterPreparer                       |         40 |          1 |       0.20 |    5.01 +-   2.23
+TFCDC_SegmentFinderFacetAutomaton           |         40 |          4 |       2.31 |   57.66 +-  27.51
+TFCDC_AxialTrackFinderLegendre              |         40 |          4 |       1.37 |   34.27 +-  21.61
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.02 |    0.40 +-   0.13
+TFCDC_StereoHitFinder                       |         40 |          0 |       0.44 |   10.90 +-   5.66
+TFCDC_SegmentTrackCombiner                  |         40 |          0 |       0.20 |    4.96 +-   2.56
+TFCDC_TrackQualityAsserter                  |         40 |          0 |       0.05 |    1.13 +-   0.34
+TFCDC_TrackExporter                         |         40 |          1 |       0.21 |    5.15 +-   1.44
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.06 +-   0.03
+CDCHitBasedT0Extraction                     |         40 |         17 |       0.23 |    5.82 +-  15.10
+CDCTrackingEventLevelMdstInfoFiller         |         40 |          0 |       0.00 |    0.05 +-   0.02
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_backward              |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_backward              |         40 |          6 |      11.95 |  298.67 +- 183.18
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+CDCToSVDSpacePointCKF_forward               |          0 |          0 |       0.00 |    0.00 +-   0.00
+CDCToSVDSpacePointCKF_forward               |         40 |          0 |       0.21 |    5.19 +-   9.03
+SectorMapBootstrap                          |         40 |          0 |       0.00 |    0.02 +-   0.00
+SegmentNetworkProducer                      |         40 |          0 |       0.03 |    0.72 +-   0.63
+TrackFinderVXDCellOMat                      |         40 |          0 |       0.02 |    0.53 +-   2.01
+AddVXDTrackCandidateSubSets                 |         40 |          0 |       0.00 |    0.11 +-   0.11
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+QualityEstimatorVXD                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+QualityEstimatorVXD                         |         40 |          0 |       0.01 |    0.15 +-   0.26
+BestVXDTrackCandidatesSelector              |         40 |          0 |       0.00 |    0.02 +-   0.00
+SPTCvirtualIPRemover                        |         40 |          0 |       0.00 |    0.02 +-   0.01
+SVDOverlapResolver                          |         40 |          0 |       0.06 |    1.44 +-   4.29
+SPTCmomentumSeedRetriever                   |         40 |          0 |       0.01 |    0.13 +-   0.05
+SPTC2RTConverter                            |         40 |          0 |       0.01 |    0.35 +-   0.20
+DAFRecoFitter                               |         40 |          0 |       0.14 |    3.50 +-   8.37
+CDCToSVDSeedCKF_backward                    |         40 |          0 |       0.16 |    4.07 +-   8.59
+DAFRecoFitter                               |         40 |          0 |       0.13 |    3.34 +-   8.47
+CDCToSVDSeedCKF_forward                     |         40 |          0 |       0.17 |    4.26 +-   8.64
+RelatedTracksCombiner                       |         40 |          1 |       1.03 |   25.71 +-  16.17
+ToCDCCKF                                    |         40 |          1 |       1.40 |   35.10 +-  34.12
+CDCCKFTracksCombiner                        |         40 |          1 |       0.38 |    9.39 +-   3.00
+PruneRecoTracks                             |         40 |          0 |       0.02 |    0.40 +-   0.12
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.04 +-   0.01
+PXDSpacePointCreator                        |         40 |          0 |       0.00 |    0.11 +-   0.03
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.00
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_backward                           |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |         10 |      12.96 |  323.94 +- 124.47
+ToPXDCKF_backward                           |         40 |          1 |       0.28 |    6.95 +-  20.51
+IoVDependentCondition                       |         40 |          0 |       0.00 |    0.02 +-   0.01
+DAFRecoFitter                               |          0 |          0 |       0.00 |    0.00 +-   0.00
+ToPXDCKF_forward                            |          0 |          0 |       0.00 |    0.00 +-   0.00
+DAFRecoFitter                               |         40 |          0 |       0.24 |    6.06 +-  26.40
+ToPXDCKF_forward                            |         40 |          0 |       0.25 |    6.27 +-  27.58
+RelatedTracksCombiner                       |         40 |          1 |       0.69 |   17.37 +-  26.45
+PruneRecoTracks                             |         40 |          0 |       0.12 |    2.91 +-   0.84
+PruneRecoTracks                             |         40 |          0 |       0.01 |    0.33 +-   0.95
+PruneRecoTracks                             |         40 |          0 |       0.12 |    3.02 +-   0.96
+PruneRecoTracks                             |         40 |          0 |       0.00 |    0.05 +-   0.01
+FullGridChi2TrackTimeExtractor              |         40 |          4 |      17.94 |  448.56 +- 138.51
+TrackFinderMCTruthRecoTracks                |         40 |          0 |       0.52 |   12.89 +-   4.45
+MCRecoTracksMatcher                         |         40 |          0 |       0.80 |   20.08 +-   8.95
+IPTrackTimeEstimator                        |         40 |          0 |       0.00 |    0.07 +-   0.01
+Combined_DAFRecoFitter                      |         40 |          0 |      13.13 |  328.35 +- 112.63
+TrackCreator                                |         40 |         21 |      24.38 |  609.45 +- 183.34
+V0Finder                                    |         40 |         35 |      36.97 |  924.26 +- 500.24
+PruneRecoHits                               |         40 |          3 |       1.29 |   32.19 +-   9.76
+Sum_Tracking                                |         40 |        111 |     130.72 | 3268.06 +-1129.62
+CDCDedxPID                                  |         40 |          0 |       0.38 |    9.56 +-   3.11
+VXDDedxPID                                  |         40 |          0 |       0.08 |    1.99 +-   0.62
+Ext                                         |         40 |          0 |       6.39 |  159.81 +-  97.79
+TOPChannelMasker                            |         40 |          0 |       0.02 |    0.46 +-   1.75
+TOPBunchFinder                              |         40 |          4 |       1.65 |   41.28 +-  22.83
+TOPReconstructor                            |         40 |          1 |       5.35 |  133.74 +-  75.10
+ARICHFillHits                               |         40 |          0 |       0.01 |    0.18 +-   0.10
+ARICHReconstructor                          |         40 |          1 |       0.17 |    4.32 +-   4.65
+Sum_PID                                     |         40 |          7 |      14.05 |  351.34 +- 145.67
+EventT0Combiner                             |         40 |          0 |       0.00 |    0.03 +-   0.02
+ECLFinalizer                                |         40 |          0 |       0.02 |    0.53 +-   0.15
+MCMatcherECLClusters                        |         40 |          0 |       0.21 |    5.31 +-   2.37
+EKLMReconstructor                           |         40 |          0 |       0.00 |    0.11 +-   0.16
+BKLMReconstructor                           |         40 |          1 |       0.01 |    0.13 +-   0.11
+KLMClustersReconstructor                    |         40 |          0 |       0.00 |    0.09 +-   0.08
+MCMatcherKLMClusters                        |         40 |          0 |       0.01 |    0.21 +-   0.13
+Muid                                        |         40 |          0 |       2.20 |   55.00 +-  20.01
+ECLTrackClusterMatching                     |         40 |          1 |       0.35 |    8.65 +-  26.01
+ECLClusterProperties                        |         40 |          0 |       0.13 |    3.31 +-   2.09
+ECLChargedPID                               |         40 |          0 |       0.01 |    0.25 +-   0.09
+MdstPID                                     |         40 |          0 |       0.01 |    0.25 +-   0.09
+KLMExpert                                   |         40 |          0 |       0.01 |    0.19 +-   0.10
+ClusterMatcher                              |         40 |          0 |       0.01 |    0.26 +-   0.13
+ECLTrackBremFinder                          |         40 |          0 |       1.17 |   29.19 +-  33.11
+PruneRecoTracks                             |         40 |          0 |       0.32 |    7.91 +-   2.67
+PruneGenfitTracks                           |         40 |          0 |       0.00 |    0.03 +-   0.02
+Sum_Clustering                              |         40 |          2 |       4.46 |  111.44 +-  54.53
+SoftwareTrigger                             |         40 |          1 |       0.03 |    0.63 +-   0.51
+ParticleLoader_pi+:skim                     |         40 |          0 |       0.02 |    0.47 +-   0.15
+ParticleLoader_gamma:skim                   |         40 |          0 |       0.01 |    0.33 +-   0.12
+SoftwareTrigger                             |         40 |          0 |       0.09 |    2.29 +-   1.11
+Tx                                          |         38 |         91 |       6.83 |  179.76 +-  96.62
+Rx                                          |         40 |         25 |     143.38 | 3584.49 +-2244.89
+=======================================================================================================
+Total (output proc.)                        |         40 |         27 |     144.33 | 3608.35 +-2245.02
+=======================================================================================================
+
+
+_________________________________________________OUTPUT END_________________________________________________
+/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2
+0.277142659184
+[doOne (2)] Mon Aug 31 21:30:21 CEST 2020 completed (status=0)
+
+[doOneWrapper (2)] Mon Aug 31 21:30:21 CEST 2020 : process 2 (pid=109) completed ok
+
+
+------------------------------------------------------------------------
+[bmk-driver.sh] all 2 processes completed successfully
+------------------------------------------------------------------------
+
+[bmk-driver.sh] parse results and generate summary: starting
+[bmk-driver.sh] current directory : /results/belle2-gen-sim-reco-c2-e20-1598901978_5044
+
+[parseResults] parse results and generate summary (previous status: 0)
+0.556433261055
+0.556433261055
+{ "copies" : 2 , "threads_per_copy" : 2 , "events_per_thread" : 20 , "throughput_score" : 0.556433261055 , "log": "OK", "app" : "belle2-gen-sim-reco-bmk" }
+
+[bmk-driver.sh] parse results and generate summary: completed (status=0)
+
+[bmk-driver.sh] json file validation: starting
+[bmk-driver.sh] lint json file '/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/belle2-gen-sim-reco_summary.json' syntax using jq
+{"app":"belle2-gen-sim-reco-bmk","log":"OK","throughput_score":0.556433261055,"events_per_thread":20,"threads_per_copy":2,"copies":2}
+[bmk-driver.sh] json file validation: completed (status=0)
+
+[bmk-driver.sh] exiting back to belle2-gen-sim-reco-bmk.sh
+
+========================================================================
+[bmk-driver.sh] Mon Aug 31 21:30:21 CEST 2020 exiting common benchmark driver (status=0)
+========================================================================
+
+Mon Aug 31 21:30:22 CEST 2020 [execute_command] 'docker run --rm -v /tmp/root/logs/noCI-20200831-120721-816257833/results:/results belle2-gen-sim-reco-bmk:v0.15 -e 20 -c 2 -d'\nReturn code: 0
+[test_standalone_image_docker] Run WL in docker (to test the image) via execute_command - completed
+
+[test_standalone_image_docker] validate json file
+[validate_jsonfile] JSON FILE: /tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/belle2-gen-sim-reco_summary.json
+[validate_jsonfile] lint json file syntax using jq
+{"copies":2,"threads_per_copy":2,"events_per_thread":20,"throughput_score":0.584752954593,"log":"OK","app":"belle2-gen-sim-reco-bmk"}
+[test_standalone_image_docker] finished at Mon Aug 31 21:30:22 CEST 2020
+[test_standalone_image_singularity] ................................................
+[test_standalone_image_singularity] starting at Mon Aug 31 21:30:22 CEST 2020
+[test_standalone_image_singularity] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[test_standalone_image_singularity] skipping singularity test CI_JOB_NAME='noCI'
+[test_standalone_image_singularity] finished at Mon Aug 31 21:30:22 CEST 2020
+[publish_standalone_image] ................................................
+[publish_standalone_image] starting at Mon Aug 31 21:30:22 CEST 2020
+[publish_standalone_image] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[publish_standalone_image] WARNING: empty CIENV_DOCKERREGISTRY, nothing to do
+[publish_standalone_image] finished at Mon Aug 31 21:30:22 CEST 2020
+[announce_standalone_image] ................................................
+[announce_standalone_image] starting at Mon Aug 31 21:30:22 CEST 2020
+[announce_standalone_image] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[announce_standalone_image] send mail from CI_MAIL_FROM=''
+[announce_standalone_image] send mail to CI_ANNOUNCE_TO=''
+[annnounce_standalone_image] WARNING: empty CIENV_DOCKERREGISTRY, nothing to do
+[announce_standalone_image] finished at Mon Aug 31 21:30:22 CEST 2020
+[execute_procedure] finished at Mon Aug 31 21:30:22 CEST 2020
+[unmount_cvmfs] ................................................
+[unmount_cvmfs] starting at Mon Aug 31 21:30:22 CEST 2020
+[unmount_cvmfs] current directory is /tmp/root/logs/noCI-20200831-120721-816257833/build-wl
+[unmount_cvmfs] unmounting cvmfs repositories belle.cern.ch
+[unmount_cvmfs] finished at Mon Aug 31 21:30:22 CEST 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+[main.sh] finished (OK) at Mon Aug 31 21:30:22 CEST 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+[gitlab-ci.sh] build back to the CI at Mon Aug 31 12:30:23 PDT 2020
+[gitlab-ci.sh] status from main.sh: 0
+
+
+
+--------------
+Creating tarball of json and log results for artifacts
+--------------
+
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/version.json
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_1/doOneWrapper_1.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/inputs.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/proc_2/doOneWrapper_2.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598900935_1683/belle2-gen-sim-reco_summary.json
+/tmp/root/logs/noCI-20200831-120721-816257833/results/cvmfs-belle.cern.ch.spec.txt
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/version.json
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_1/doOneWrapper_1.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/inputs.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/proc_2/doOneWrapper_2.log
+/tmp/root/logs/noCI-20200831-120721-816257833/results/belle2-gen-sim-reco-c2-e20-1598901978_5044/belle2-gen-sim-reco_summary.json
+
+
+--------------
+ Clean up CVMFS Volumes
+--------------
+
+CIENV_CVMFSVOLUME is /tmp/root/cvmfs_hep/noCI-20200831-120721-816257833
+CIENV_CVMFSVOLUME directory is empty
+
+
+--------------
+ Clean up docker containers
+--------------
+
+There are no docker containers to clear
+
+
+--------------
+ Clean up docker images
+--------------
+
+Clearing images c283a304f469
+9cabcc672d7d
+Deleted: sha256:c283a304f4697290fc413a9d60d488ddeb5ecd78b2f1468752fd137d5d3734d6
+Deleted: sha256:5ff52a1a0fbd18b21d862de3cde745576217d2117cc6b766d7d73c6e205cf627
+Deleted: sha256:f5d816c4ff77907f3c11c6b194410001c99b40c533763e75a3585b8d05824b72
+Deleted: sha256:9d5feff91fc67c541e4551ef93336ad4f083f75597d42cf87c9f4dbbb7cd5809
+Deleted: sha256:4703beced28458ece1a07540507a2b55b02a5d61a54771e7f54285d8bd2252d4
+Deleted: sha256:3e829be4a5e01cfcafd64b4743ee3ed1c4788fe226cc1434452acd81d35078f1
+Deleted: sha256:9cca1ba613577a415d9a1036bbd67c934cd16aaa1565e191c1d59859b4af4b2c
+Deleted: sha256:8c19f37505502e1ddbf7f69b3207f45b90d33eae98972f1c7af0f52f2708e4b2
+Deleted: sha256:6ee5982b4998c6a4a072692f8ba2ee862a12669dcb3e5b054c6308d41fb00e4e
+Deleted: sha256:ed771f841bac4fd5367299d6e3d29d492cb3593b67f5665d1c6e45471248212e
+Deleted: sha256:a8838dbce9b0d034362a54d276f1951ac77af2e6036d387ac3d18a8557f49d30
+Deleted: sha256:b0bc4fa9d4f0931bb4fe5b1efc51cd70cc72a0e21d7bec277959312f2cdd235b
+Deleted: sha256:480c7bfae8ddf9abf769be675dee3d467f8ea6f09778e4bd943a85d665459f95
+Deleted: sha256:358d123962f88bb89b2950c2faf12ed4ec804fa67ffc9778b8923e214c1f09ce
+Deleted: sha256:1494d98bc42f913f6e617742e08a952a52b8ee1ad44fe5342ad734faa7d72f79
+Deleted: sha256:95a826f4236e15d936afe21f60a285f002f7ce322406fa18f37d11edfc841168
+Deleted: sha256:fe2005d7efa44893db301767dde4fc05aa627d57ea815d35033082ffe0073750
+Deleted: sha256:b02f6b417fa0e56cc92ac0d36a81eddd895105a103c4359aa0b308ee1fe1856d
+Deleted: sha256:2064a612c4992d20ce48ab89d0f161c028c92c11f475e1e1b86611abf2252a30
+Deleted: sha256:9cabcc672d7dd6a79a03f2c0331e155f0b8467f49531503e300e85bdb68f801c
+Deleted: sha256:b760d1c8302bb06a4c787d7c9387518fc0f966ac55e658a44b6913d5bdf646cc
+Deleted: sha256:a742e6b2017566989e85e78b515a7ddc3777f630c789036091efd71eb7bf6149
+Deleted: sha256:083a5bac5ed26371f5992ba8b9cad55737a191127ecbdd450eabbafbc18ebac5
+Deleted: sha256:867fb383b9d58170e154cf807c825574c021260868742354861b340e77df0846
+Deleted: sha256:9af88e2ff5d65456f21f8ccaa49f75e50e1eca743fe5ccd9dca9bc39f42162c5
+Deleted: sha256:6f72284e4264d11f2a2dada4b81446ae444fe79a4236772971bcc887393c3da3
+Deleted: sha256:93b97871ea201eeeb34f73e3cfb13fc35ad6d92b99b61d2cdd941c1e26e5c1e3
+Deleted: sha256:b25b18f38eb9ba56e528c92b5c2f706a52645e47836ead1324f605984416f2f8
+Deleted: sha256:1cbd469bce9e44686554c0f7bccdc74ca7c0720b1b0fa6a9e8b6e64579cdda74
+Deleted: sha256:b04818b8b783f915c0f19487af82d32926ea128c5bcaff61d3afb43a813101ea
+Deleted: sha256:70b381beb6695b6a418b07ac9b86718d0b255e835edabb718c01c19f4fcb8ec6
+Deleted: sha256:f75504f0e31954fc9142357597bf2144828bf2ef83dc4d6d129d9a3839904bfd
+Deleted: sha256:497a782a89418413e9ace5ebd321f3f0d7015f701edcaea87551f1479f667642
+Deleted: sha256:180436506bb6516b4e458e36f40933ba85ae3e7f063181254abb806ba3c70a51
+Deleted: sha256:22adfc40600efde86175be82c8e56cdb4fa483e0dd6e50df76da6492cc6be7fa
+Deleted: sha256:64e42099652c1d12132cb1e9f74c23a16aa851a2557f9a9df4784c97c30619b9
+Deleted: sha256:9f863f1c1ff01040c1d8d54831e3efe31426a8103a72c4115d24ba1d8d70f0d7
+Deleted: sha256:3a15cc82c050356bd4eb330c12be8613d58b2ba0827a2f833c0bf3316b4b87df
+
+
+Terminating with exit status 0
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+[gitlab-ci.sh] build finished (OK) at Mon Aug 31 12:30:29 PDT 2020
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
