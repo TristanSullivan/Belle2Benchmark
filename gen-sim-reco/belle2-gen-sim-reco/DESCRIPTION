@@ -1,0 +1,15 @@
+Belle-II reference workload executing reconstruction of B0/B0bar events at
+10.58 GeV at superKEKB in the 2020 Belle-II detector.
+
+The workload executes event generation, detector and trigger simulation, and 
+track reconstruction.
+
+The workload is run by default as a multithreaded application; the default 
+number of threads is 4 and the default number of copies is the number of cores 
+divided by 4.
+
+The reported measurement is the total throughput achieved on the node, measured
+in events per second.
+
+The overall score is reported in wl-scores.
+
