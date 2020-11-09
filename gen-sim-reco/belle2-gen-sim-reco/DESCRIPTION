@@ -1,5 +1,5 @@
-Belle-II reference workload executing reconstruction of B0/B0bar events at
-10.58 GeV at superKEKB in the 2020 Belle-II detector.
+Belle-II reference workload simulating background-free B0/B0bar events at 10.58 
+GeV at superKEKB in the 2020 Belle-II detector.
 
 The workload executes event generation, detector and trigger simulation, and 
 track reconstruction.
