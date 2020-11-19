@@ -4,38 +4,6 @@
 
 #set -e # immediate exit on error
 
-# Function parseResults must be defined in each benchmark (or in a separate file parseResults.sh)
-# [NB: if a separate function generateSummary exists, it must be internally called by parseResults]
-# Input argument $1: status code <fail> from validateInputArguments and doOne steps:
-# - <fail> < 0: validateInputArguments failed
-# - <fail> > 0: doOne failed (<fail> processes failed out of $NCOPIES)
-# - <fail> = 0: OK
-# Return value: please return 0 if parsing was successful, 1 otherwise
-# The following variables are guaranteed to be defined and exported: NCOPIES, NTHREADS, NEVENTS_THREAD, BMKDIR, DEBUG
-# Logfiles have been stored in process-specific working directories <basewdir>/proc_<1...NCOPIES>
-# The function is started in the base working directory <basewdir>:
-# please store here the overall json summary file for all NCOPIES processes combined
-function parseResults(){
-  if [ "$1" == "" ] || [ "$2" != "" ]; then echo "[parseresults] ERROR! Invalid arguments '$@' to parseResults"; return 1; fi
-  echo "[parseResults] parse results and generate summary (previous status: $1)"
-  #local score=1 # hardcoded (dummy)
-  local msg="OK"
-  #local app="\"UNKNOWN\""
-  local app="\"belle2-gen-sim-reco-bmk\""
-  local json=belle2-gen-sim-reco_summary.json
-  cd proc_1
-  python parsetwo.py $NCOPIES > score
-  #cat score
-  cd ..
-  #cat proc_1/score
-  #for i in $(seq $NCOPIES); do echo $i; ls proc_$i; cat proc_$i/parsedoutput; done
-  #python parsetwo.py $NCOPIES > score
-  local score=`cat proc_1/score`
-  echo -e "{ \"copies\" : $NCOPIES , \"threads_per_copy\" : $NTHREADS , \"events_per_thread\" : $NEVENTS_THREAD , \"throughput_score\" : $score , \"log\": \"$msg\", \"app\" : ${app} }" > ${json} && cat ${json}
-  # Return 0 if parsing was successful, 1 otherwise
-  return 0
-}
-
 # Function doOne must be defined in each benchmark
 # Input argument $1: process index (between 1 and $NCOPIES)
 # Return value: please return 0 if this workload copy was successful, 1 otherwise
@@ -45,35 +13,43 @@ function parseResults(){
 function doOne(){
   if [ "$1" == "" ] || [ "$2" != "" ]; then echo "[doOne] ERROR! Invalid arguments '$@' to doOne"; return 1; fi
   echo "[doOne ($1)] $(date) starting in $(pwd)"
-  # Configure WL copy
-  # Execute WL copy
   echo "[doOne ($1)] do one! (process $1 of $NCOPIES)"
-  #for i in $(seq $NTHREADS); do echo "HALLO WORLD $i"; done
-  #for i in $(seq $NTHREADS); do source /cvmfs/belle.cern.ch/el7/tools/b2setup; b2analysis-create bmk-04-01-05 release-04-01-05; cd bmk-04-01-05; b2setup; cp /root/bmk-04-01-05/bmk.py .; basf2 bmk.py; done
+
+  # Configure WL copy
   curdir=`pwd`
-  ln -s $BMKDIR/bmk-04-01-05 bmk-04-01-05
-  cd bmk-04-01-05
-  #ls
-  source /cvmfs/belle.cern.ch/tools/b2setup release-04-01-05
+  export BELLE2_CONDB_SERVERLIST=/cvmfs/belle.cern.ch/conditions/database.sqlite
+  cat > SConscript <<EOT
+Import('env')
+# This file specifies the dependencies of your Analyis code to parts of the
+# Belle 2 Software. It should be fine for most analysis but if you need to link
+# against additional libraries pleas put them here.
+env['LIBS'] = [
+    'mdst_dataobjects',
+    'analysis_dataobjects',
+    'analysis',
+    'framework',
+    '\$ROOT_LIBS',
+]
+Return('env')
+EOT
+  
+  echo release-05-01-05 > .analysis 
+  source /cvmfs/belle.cern.ch/tools/b2setup release-05-01-05
+  ln -s $BMKDIR/bmk.py bmk.py
+
+  # Execute WL copy
   echo "Executing the following number of threads:"
   echo $NTHREADS
-  basf2 bmk.py -n $(( $NEVENTS_THREAD * $NTHREADS )) -p $NTHREADS > $curdir/output
+
+  # Ignore requests for multi-threading
+  basf2 bmk.py -n $(( $NEVENTS_THREAD ))  > $curdir/output
+  status=$?
+
   cd $curdir
   #echo "_________________________________________________OUTPUT START_________________________________________________"
   cat output
   #echo "_________________________________________________OUTPUT END_________________________________________________"
-  ln -s $BMKDIR/parse.py parse.py
-  ln -s $BMKDIR/parsetwo.py parsetwo.py
-  python parse.py $(( $NEVENTS_THREAD * $NTHREADS )) > parsedoutput
-  pwd
-  #cat parsedoutput
-  #b2analysis-create bmk-04-01-05 release-04-01-05
-  #cd bmk-04-01-05
-  #b2setup 
-  #cp /root/bmk-04-01-05/bmk.py .
-  #basf2 bmk.py
-  #status=0
-  status=$?
+
   echo "[doOne ($1)] $(date) completed (status=$status)"
   # Return 0 if this workload copy was successful, 1 otherwise
   return $status
@@ -105,7 +81,7 @@ function usage_detailed(){
 }
 
 # Default values for NCOPIES, NTHREADS, NEVENTS_THREAD must be set in each benchmark
-NTHREADS=4
+NTHREADS=1
 NCOPIES=$(( `nproc` / $NTHREADS )) # (do not use NTHREADS=1, to allow tests that this can be changed)
 NEVENTS_THREAD=50
 
