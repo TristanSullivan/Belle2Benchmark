@@ -16,6 +16,14 @@ function parseResults(){
   if [ "$1" == "" ] || [ "$2" != "" ]; then echo "[parseresults] ERROR! Invalid arguments '$@' to parseResults"; return 1; fi
   echo "[parseResults] parse results and generate summary (previous status: $1)"
 
+  # Borrowed from LHCb gen-sim (s_msg is "log" in JSON output)
+  export s_msg="ok"
+  if [ "$1" -ne 0 ]; then
+        echo "Previous steps failed: skip parsing, go to generateSummary"     
+        s_msg="ERROR"
+        return 1
+  fi
+
   # I am but a wrapper
   ln -s $BMKDIR/parseResults.py parseResults.py
   ./parseResults.py 

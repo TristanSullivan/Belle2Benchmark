@@ -174,28 +174,59 @@ else:
 	MedTotal = TotalScores[len(TotalScores) / 2]
 
 
+
+
 OutputJSON = {}
 OutputJSON['run_info'] = {}
 OutputJSON['report'] = {}
 OutputJSON['report']['wl-scores'] = {}
 OutputJSON['report']['wl-stats'] = {}
-OutputJSON['report']['wl-stats']['throughput_score'] = {}
+OutputJSON['report']['wl-stats']['gen'] = {}
+OutputJSON['report']['wl-stats']['sim'] = {}
+OutputJSON['report']['wl-stats']['reco'] = {}
+OutputJSON['report']['wl-stats']['gen-sim-reco'] = {}
 OutputJSON['app'] = {}
 
 OutputJSON['run_info']['copies'] = int(os.environ['NCOPIES'])
 OutputJSON['run_info']['threads_per_copy'] = int(os.environ['NTHREADS'])
 OutputJSON['run_info']['events_per_thread'] = int(os.environ['NEVENTS_THREAD'])
-OutputJSON['report']['wl-scores']['gen'] = AvgGen
-OutputJSON['report']['wl-scores']['sim'] = 1.0 / (1.0 / AvgSim + 1.0 / AvgTrigSim)
-OutputJSON['report']['wl-scores']['reco'] = AvgReco
-OutputJSON['report']['wl-scores']['gen-sim-reco'] = AvgTotal
-OutputJSON['report']['wl-stats']['throughput_score']['avg'] = AvgTotal
-OutputJSON['report']['wl-stats']['throughput_score']['median'] = MedTotal
-OutputJSON['report']['wl-stats']['throughput_score']['min'] = MinTotal
-OutputJSON['report']['wl-stats']['throughput_score']['max'] = MaxTotal
-OutputJSON['report']['wl-stats']['throughput_score']['count'] = int(os.environ['NCOPIES'])
-OutputJSON['app']['version'] = "v1.0"
-OutputJSON['app']['description'] = "Belle-2 generation, simulation, and reconstruction of BBbar events based on release 05-01-05"
+OutputJSON['report']['wl-scores']['gen'] = AvgGen * int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-scores']['sim'] = 1.0 / (1.0 / AvgSim + 1.0 / AvgTrigSim) * int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-scores']['reco'] = AvgReco * int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-scores']['gen-sim-reco'] = AvgTotal * int(os.environ['NCOPIES'])
+
+OutputJSON['report']['wl-stats']['gen-sim-reco']['avg'] = AvgTotal
+OutputJSON['report']['wl-stats']['gen-sim-reco']['median'] = MedTotal
+OutputJSON['report']['wl-stats']['gen-sim-reco']['min'] = MinTotal
+OutputJSON['report']['wl-stats']['gen-sim-reco']['max'] = MaxTotal
+OutputJSON['report']['wl-stats']['gen-sim-reco']['count'] = int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-stats']['gen']['avg'] = AvgGen
+OutputJSON['report']['wl-stats']['gen']['median'] = MedGen
+OutputJSON['report']['wl-stats']['gen']['min'] = MinGen
+OutputJSON['report']['wl-stats']['gen']['max'] = MaxGen
+OutputJSON['report']['wl-stats']['gen']['count'] = int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-stats']['sim']['avg'] = 1.0 / (1.0 / AvgSim + 1.0 / AvgTrigSim)
+OutputJSON['report']['wl-stats']['sim']['median'] = 1.0 / (1.0 / MedSim + 1.0 / MedTrigSim)
+OutputJSON['report']['wl-stats']['sim']['min'] = 1.0 / (1.0 / MinSim + 1.0 / MinTrigSim)
+OutputJSON['report']['wl-stats']['sim']['max'] = 1.0 / (1.0 / MaxSim + 1.0 / MaxTrigSim)
+OutputJSON['report']['wl-stats']['sim']['count'] = int(os.environ['NCOPIES'])
+OutputJSON['report']['wl-stats']['reco']['avg'] = AvgReco
+OutputJSON['report']['wl-stats']['reco']['median'] = MedReco
+OutputJSON['report']['wl-stats']['reco']['min'] = MinReco
+OutputJSON['report']['wl-stats']['reco']['max'] = MaxReco
+OutputJSON['report']['wl-stats']['reco']['count'] = int(os.environ['NCOPIES'])
+
+# Borrowed from atlas/gen/atlas-gen/parseResults.py 
+try:       
+	with open(os.path.join(os.environ['BMKDIR'],"version.json")) as f:         
+		version_json = json.loads(f.read())         
+		version_json['containment'] = os.environ['flavor']
+		OutputJSON["app"] = version_json
+except:       
+	OutputJSON["app"] = ''
+
+
+OutputJSON['report']['log'] = os.environ['s_msg']
 
 OutputFile = open("belle2-gen-sim-reco_summary.json", "w")
 json.dump(OutputJSON, OutputFile)

@@ -45,10 +45,14 @@ EOT
   basf2 bmk.py -n $(( $NEVENTS_THREAD ))  > $curdir/output
   status=$?
 
-  cd $curdir
-  #echo "_________________________________________________OUTPUT START_________________________________________________"
-  cat output
-  #echo "_________________________________________________OUTPUT END_________________________________________________"
+  # Set to 1 to print workload output to screen
+  debug=0
+  if [ $debug -eq 1 ]; then
+    cd $curdir;
+    echo "_________________________________________________OUTPUT START_________________________________________________";
+    cat output;
+    echo "_________________________________________________OUTPUT END_________________________________________________";
+  fi 
 
   echo "[doOne ($1)] $(date) completed (status=$status)"
   # Return 0 if this workload copy was successful, 1 otherwise
@@ -81,8 +85,8 @@ function usage_detailed(){
 }
 
 # Default values for NCOPIES, NTHREADS, NEVENTS_THREAD must be set in each benchmark
-NTHREADS=1
-NCOPIES=$(( `nproc` / $NTHREADS )) # (do not use NTHREADS=1, to allow tests that this can be changed)
+NCOPIES=$(nproc)
+NTHREADS=1 # cannot be changed by user input (single-threaded single-process WL)
 NEVENTS_THREAD=50
 
 # Source the common benchmark driver
