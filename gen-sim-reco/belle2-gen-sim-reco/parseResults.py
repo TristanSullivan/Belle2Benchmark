@@ -4,15 +4,7 @@ import sys
 import os
 import json 
 
-"""
-if len(sys.argv) != 2:
-	print("[parseresults] ERROR! Invalid arguments " + str(sys.argv[1:]) + " to parseResults")
-	sys.exit()
-
-print("[parseResults] parse results and generate summary (previous status: " + str(sys.argv[1]) + ")")
-"""
-
-print("########################PARSERESULTS.PY########################")
+#print("########################PARSERESULTS.PY########################")
 
 GenScores = []
 SimScores = []
@@ -43,6 +35,7 @@ MinTotal = 1000000
 
 for i in range(0, int(os.environ['NCOPIES'])):
 
+	
 	if i == 0:
 		dirname = "proc_" + str(i + 1)
 	else:
@@ -67,7 +60,7 @@ for i in range(0, int(os.environ['NCOPIES'])):
 				splitline = line.split("|")
 				#print splitline
 				if "Sum_" not in line:
-					print splitline
+					#print splitline
 					#total = total + float(splitline[3].strip())
 					temptotal = temptotal + float(splitline[3].strip())
 
@@ -103,11 +96,11 @@ for i in range(0, int(os.environ['NCOPIES'])):
 	Reco = float(os.environ['NEVENTS_THREAD']) / Reco
 	Total = float(os.environ['NEVENTS_THREAD']) / Total
 
-	print "Gen: " + str(Gen)
-	print "Sim: " + str(Sim)
-	print "TrigSim: " + str(TrigSim)
-	print "Reco: " + str(Reco)
-	print "Total: " + str(Total)
+	#print "Gen: " + str(Gen)
+	#print "Sim: " + str(Sim)
+	#print "TrigSim: " + str(TrigSim)
+	#print "Reco: " + str(Reco)
+	#print "Total: " + str(Total)
 
 	GenScores.append(Gen)
 	SimScores.append(Sim)
@@ -115,11 +108,11 @@ for i in range(0, int(os.environ['NCOPIES'])):
 	RecoScores.append(Reco)
 	TotalScores.append(Total)
 
-	print GenScores
-	print SimScores
-	print TrigSimScores
-	print RecoScores
-	print TotalScores
+	#print GenScores
+	#print SimScores
+	#print TrigSimScores
+	#print RecoScores
+	#print TotalScores
 
 	if Gen > MaxGen:
 		MaxGen = Gen

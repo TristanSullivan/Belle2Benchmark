@@ -15,22 +15,11 @@
 function parseResults(){
   if [ "$1" == "" ] || [ "$2" != "" ]; then echo "[parseresults] ERROR! Invalid arguments '$@' to parseResults"; return 1; fi
   echo "[parseResults] parse results and generate summary (previous status: $1)"
+
+  # I am but a wrapper
   ln -s $BMKDIR/parseResults.py parseResults.py
-  ./parseResults.py $NEVENTS_THREAD
-  #local score=1 # hardcoded (dummy)
-  #local msg="OK"
-  #local app="\"UNKNOWN\""
-  #local app="\"belle2-gen-sim-reco-bmk\""
-  #local json=belle2-gen-sim-reco_summary.json
-  #cd proc_1
-  #python parsetwo.py $NCOPIES > score
-  #cat score
-  #cd ..
-  #cat proc_1/score
-  #for i in $(seq $NCOPIES); do echo $i; ls proc_$i; cat proc_$i/parsedoutput; done
-  #python parsetwo.py $NCOPIES > score
-  #local score=`cat proc_1/score`
-  #echo -e "{ \"copies\" : $NCOPIES , \"threads_per_copy\" : $NTHREADS , \"events_per_thread\" : $NEVENTS_THREAD , \"throughput_score\" : $score , \"log\": \"$msg\", \"app\" : ${app} }" > ${json} && cat ${json}
-  # Return 0 if parsing was successful, 1 otherwise
+  ./parseResults.py 
+  rm parseResults.py
+
   return 0
 }
