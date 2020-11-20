@@ -4,12 +4,11 @@ GeV at superKEKB in the 2020 Belle-II detector.
 The workload executes event generation, detector and trigger simulation, and 
 track reconstruction.
 
-The workload is run by default as a multithreaded application; the default 
-number of threads is 4 and the default number of copies is the number of cores 
-divided by 4.
+The workload is single-threaded. It ignores the -t option. 
 
-The reported measurement is the total throughput achieved on the node, measured
-in events per second.
+The throughput scores for event generation, simulation, and reconstruction are 
+given separately; the totals are reported as well. Each score is the number of 
+events per second processed on the node.
 
 The overall score is reported in wl-scores.
 
