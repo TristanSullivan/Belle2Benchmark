@@ -1,1 +1,8 @@
-{"version":"v0.15","description":"belle2-gen-sim-reco-bmk","cvmfs_checksum":"abf1aa6a057d31206a723aa58351e969","bmkdata_checksum":"b277ed3c8c42df390e91f44e20a631f1","bmk_checksum":"10ba4a236d6daee50547ffa0cdc3edec"}
+{
+  "containment": "docker",
+  "bmk_checksum": "862325c06297e768b92e2405d62868a7",
+  "bmkdata_checksum": "b277ed3c8c42df390e91f44e20a631f1",
+  "cvmfs_checksum": "35ac0e4e8a7070aedf3e9e751e64fcca",
+  "description": "belle2-gen-sim-reco-bmk",
+  "version": "v1.0"
+}
